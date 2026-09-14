@@ -1,483 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Just For You</title>
+  <title>Thodi Der Aur Theher Ja ❤️</title>
 
-<style>
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    min-height: 100vh;
-    background:
-        radial-gradient(circle at 50% 35%, #211822 0%, #0d0b10 42%, #050507 100%);
-    color: #f7f0eb;
-    font-family: Georgia, "Times New Roman", serif;
-    overflow: hidden;
-}
-
-/* Stars */
-
-.star {
-    position: fixed;
-    width: 2px;
-    height: 2px;
-    background: white;
-    border-radius: 50%;
-    opacity: 0.35;
-    animation: twinkle 3s infinite;
-}
-
-@keyframes twinkle {
-    50% {
-        opacity: 0.08;
-        transform: scale(0.5);
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-}
 
-/* Main */
+    body {
+      background: #080808;
+      color: white;
+      font-family: Georgia, "Times New Roman", serif;
+      overflow-x: hidden;
+    }
 
-.container {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 25px;
-}
+    /* OPENING SCREEN */
 
-.content {
-    text-align: center;
-    max-width: 700px;
-    width: 100%;
+    .opening {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 30px;
+      background:
+        radial-gradient(circle at center, #242424 0%, #0c0c0c 45%, #000 100%);
+      position: relative;
+    }
 
-    opacity: 0;
-    transform: translateY(20px);
+    .opening-content {
+      max-width: 500px;
+    }
 
-    animation: appear 1.8s ease forwards;
-}
+    .line {
+      opacity: 0;
+      transform: translateY(15px);
+      animation: appear 2s ease forwards;
+    }
 
-@keyframes appear {
-    to {
+    .line1 {
+      font-size: 22px;
+      animation-delay: 1s;
+    }
+
+    .line2 {
+      font-size: 18px;
+      color: #cfcfcf;
+      margin-top: 28px;
+      animation-delay: 4s;
+    }
+
+    .line3 {
+      font-size: 26px;
+      margin-top: 35px;
+      font-style: italic;
+      color: #f5d7dc;
+      animation-delay: 7s;
+    }
+
+    .heart {
+      font-size: 25px;
+      margin-top: 18px;
+      opacity: 0;
+      animation:
+        appear 2s ease forwards 9s,
+        heartbeat 1.5s ease-in-out infinite 11s;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
         opacity: 1;
         transform: translateY(0);
+      }
     }
-}
 
-/* Small heading */
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
 
-.subtitle {
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    color: #aaa1a0;
+      50% {
+        transform: scale(1.25);
+      }
+    }
 
-    margin-bottom: 30px;
-}
+    /* CONTINUE BUTTON */
 
-/* Main heading */
+    .continue {
+      position: absolute;
+      bottom: 45px;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      animation: appear 2s ease forwards 11s;
+      color: #ddd;
+      font-size: 14px;
+      letter-spacing: 2px;
+      cursor: pointer;
+    }
 
-h1 {
-    font-size: clamp(50px, 13vw, 90px);
-    font-weight: normal;
-    margin: 0 0 25px;
-}
+    .arrow {
+      display: block;
+      font-size: 20px;
+      margin-top: 8px;
+      animation: bounce 1.5s infinite;
+    }
 
-/* Message */
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
 
-.message {
-    font-size: clamp(18px, 4.5vw, 25px);
-    line-height: 1.7;
-    color: #ddd5d1;
+      50% {
+        transform: translateY(7px);
+      }
+    }
 
-    min-height: 80px;
-}
+    /* PHOTO SECTION */
 
-/* Countdown */
+    .memories {
+      min-height: 100vh;
+      padding: 80px 20px;
+      text-align: center;
+      background: #0b0b0b;
+    }
 
-.countdown {
-    display: flex;
-    justify-content: center;
+    .memories h1 {
+      font-size: 27px;
+      font-weight: normal;
+      margin-bottom: 15px;
+    }
 
-    gap: clamp(12px, 4vw, 30px);
+    .memories p {
+      color: #aaa;
+      margin-bottom: 45px;
+    }
 
-    margin: 45px 0 35px;
-}
+    .photo {
+      width: 90%;
+      max-width: 420px;
+      margin: 0 auto 55px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: photoAppear 1.5s ease forwards;
+    }
 
-.number {
-    font-family: Arial, sans-serif;
-    font-size: clamp(30px, 8vw, 55px);
-    font-weight: 400;
-}
+    .photo img {
+      width: 100%;
+      border-radius: 14px;
+      display: block;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    }
 
-.label {
-    font-family: Arial, sans-serif;
-    font-size: 9px;
-    letter-spacing: 3px;
-    color: #888080;
+    @keyframes photoAppear {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-    margin-top: 8px;
-}
+    /* HIDDEN UNTIL CONTINUE */
 
-/* Button */
+    #memories {
+      display: none;
+    }
 
-button {
-    background: transparent;
-
-    border: 1px solid #665153;
-
-    color: #eee5e1;
-
-    padding: 14px 25px;
-
-    border-radius: 50px;
-
-    font-family: Arial, sans-serif;
-
-    cursor: pointer;
-
-    transition: all 0.35s ease;
-}
-
-button:hover {
-    background: #ead1c8;
-    color: #171216;
-
-    transform: translateY(-2px);
-}
-
-/* Reply */
-
-.reply {
-    margin-top: 25px;
-
-    font-size: 18px;
-
-    color: #d9a99b;
-
-    min-height: 30px;
-}
-
-/* Footer */
-
-.footer {
-    position: fixed;
-
-    bottom: 18px;
-
-    left: 0;
-    right: 0;
-
-    text-align: center;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 9px;
-
-    letter-spacing: 3px;
-
-    color: #666064;
-}
-
-</style>
+  </style>
 </head>
-
 
 <body>
 
-<div class="container">
+  <!-- OPENING -->
 
-<div class="content">
+  <section class="opening">
 
-<div class="subtitle" id="subtitle">
-A little something for you
-</div>
+    <div class="opening-content">
 
-<h1 id="title">
-Hey...
-</h1>
+      <div class="line line1">
+        Hey…
+      </div>
 
-<div class="message" id="message">
-I made something for you.
-<br>
-But you're going to have to wait.
-</div>
+      <div class="line line2">
+        Before you scroll…
+      </div>
 
+      <div class="line line3">
+        Thodi der aur theher ja…
+      </div>
 
-<!-- COUNTDOWN -->
+      <div class="heart">
+        ❤️
+      </div>
 
-<div class="countdown" id="countdown">
+    </div>
 
-<div>
-<div class="number" id="days">00</div>
-<div class="label">DAYS</div>
-</div>
+    <div class="continue" onclick="showMemories()">
+      CONTINUE
+      <span class="arrow">↓</span>
+    </div>
 
-<div>
-<div class="number" id="hours">00</div>
-<div class="label">HOURS</div>
-</div>
-
-<div>
-<div class="number" id="minutes">00</div>
-<div class="label">MINUTES</div>
-</div>
-
-<div>
-<div class="number" id="seconds">00</div>
-<div class="label">SECONDS</div>
-</div>
-
-</div>
+  </section>
 
 
-<button id="button">
-I'll wait ❤️
-</button>
+  <!-- MEMORIES -->
 
-<div class="reply" id="reply"></div>
+  <section class="memories" id="memories">
 
-</div>
+    <h1>A little something for you…</h1>
 
-</div>
+    <p>Some moments are worth staying for.</p>
 
 
-<div class="footer" id="footer">
-COME BACK TOMORROW
-</div>
+    <!-- PHOTO 1 -->
+
+    <div class="photo">
+      <img src="photo1.jpg" alt="Our memory">
+    </div>
 
 
-<script>
+    <!-- PHOTO 2 -->
 
-/* -----------------------------------
-   IMPORTANT DATES
------------------------------------ */
-
-const startDate =
-new Date("2026-09-15T00:00:00+05:30");
-
-const birthday =
-new Date("2026-09-19T00:00:00+05:30");
+    <div class="photo">
+      <img src="photo2.jpg" alt="Our memory">
+    </div>
 
 
-/* -----------------------------------
-   DATE CHECK
------------------------------------ */
+    <!-- PHOTO 3 -->
 
-function checkDate() {
+    <div class="photo">
+      <img src="photo3.jpg" alt="Our memory">
+    </div>
 
-    const now = new Date();
 
-    /* BEFORE SEPTEMBER 15 */
+    <!-- PHOTO 4 -->
 
-    if (now < startDate) {
+    <div class="photo">
+      <img src="photo4.jpg" alt="Our memory">
+    </div>
 
-        document.getElementById("subtitle")
-        .innerText = "Not yet 👀";
 
-        document.getElementById("title")
-        .innerText = "Hey...";
+    <!-- PHOTO 5 -->
 
-        document.getElementById("message")
-        .innerHTML =
-        "You found this a little early.<br><br>" +
-        "Come back on September 15.";
+    <div class="photo">
+      <img src="photo5.jpg" alt="Our memory">
+    </div>
 
-        document.getElementById("countdown")
-        .style.display = "none";
 
-        document.getElementById("button")
-        .style.display = "none";
+    <!-- PHOTO 6 -->
 
-        document.getElementById("footer")
-        .innerText = "SHHH...";
+    <div class="photo">
+      <img src="photo6.jpg" alt="Our memory">
+    </div>
 
-        return;
+  </section>
+
+
+  <script>
+
+    function showMemories() {
+
+      const memories = document.getElementById("memories");
+
+      memories.style.display = "block";
+
+      setTimeout(() => {
+        memories.scrollIntoView({
+          behavior: "smooth"
+        });
+      }, 100);
 
     }
 
-
-    /* BIRTHDAY */
-
-    if (now >= birthday) {
-
-        birthdayMode();
-
-        return;
-
-    }
-
-
-    /* NORMAL DAY */
-
-    updateCountdown();
-
-}
-
-
-/* -----------------------------------
-   COUNTDOWN
------------------------------------ */
-
-function updateCountdown() {
-
-    const now = new Date();
-
-    const difference =
-    birthday - now;
-
-    if (difference <= 0) {
-
-        birthdayMode();
-
-        return;
-
-    }
-
-
-    const totalSeconds =
-    Math.floor(difference / 1000);
-
-
-    const days =
-    Math.floor(totalSeconds / 86400);
-
-
-    const hours =
-    Math.floor(
-        (totalSeconds % 86400) / 3600
-    );
-
-
-    const minutes =
-    Math.floor(
-        (totalSeconds % 3600) / 60
-    );
-
-
-    const seconds =
-    totalSeconds % 60;
-
-
-    document.getElementById("days")
-    .innerText =
-    String(days).padStart(2,"0");
-
-
-    document.getElementById("hours")
-    .innerText =
-    String(hours).padStart(2,"0");
-
-
-    document.getElementById("minutes")
-    .innerText =
-    String(minutes).padStart(2,"0");
-
-
-    document.getElementById("seconds")
-    .innerText =
-    String(seconds).padStart(2,"0");
-
-}
-
-
-/* -----------------------------------
-   BIRTHDAY MODE
------------------------------------ */
-
-function birthdayMode() {
-
-    document.getElementById("subtitle")
-    .innerText =
-    "19 • 09 • 2026";
-
-
-    document.getElementById("title")
-    .innerText =
-    "Happy Birthday ❤️";
-
-
-    document.getElementById("message")
-    .innerHTML =
-    "The wait is over.<br><br>" +
-    "The rest of your surprise is waiting for you.";
-
-
-    document.getElementById("countdown")
-    .style.display = "none";
-
-
-    document.getElementById("button")
-    .innerText =
-    "Open your surprise";
-
-
-    document.getElementById("footer")
-    .innerText =
-    "TODAY IS YOUR DAY";
-
-}
-
-
-/* -----------------------------------
-   BUTTON
------------------------------------ */
-
-document.getElementById("button")
-.addEventListener("click", function() {
-
-    document.getElementById("reply")
-    .innerText =
-    "Good. Now go away. 😂";
-
-});
-
-
-/* -----------------------------------
-   START
------------------------------------ */
-
-checkDate();
-
-
-setInterval(function() {
-
-    checkDate();
-
-}, 1000);
-
-
-/* -----------------------------------
-   CREATE STARS
------------------------------------ */
-
-for(let i = 0; i < 40; i++) {
-
-    const star =
-    document.createElement("div");
-
-    star.className = "star";
-
-    star.style.left =
-    Math.random() * 100 + "vw";
-
-    star.style.top =
-    Math.random() * 100 + "vh";
-
-    star.style.animationDelay =
-    Math.random() * 3 + "s";
-
-    document.body.appendChild(star);
-
-}
-
-</script>
+  </script>
 
 </body>
 </html>
