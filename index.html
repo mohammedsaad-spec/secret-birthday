@@ -14,14 +14,38 @@
     }
 
     body {
-      background: #080808;
+      background: #1a0205; /* Deep wine base */
       color: white;
       font-family: Georgia, "Times New Roman", serif;
       overflow-x: hidden;
     }
 
-    /* OPENING SCREEN */
+    /* SPARKLING STARS BACKGROUND */
+    #star-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
 
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      opacity: 0;
+      animation: twinkle linear infinite;
+    }
+
+    @keyframes twinkle {
+      0% { opacity: 0; transform: scale(0.5); }
+      50% { opacity: 0.8; transform: scale(1.2); box-shadow: 0 0 5px white; }
+      100% { opacity: 0; transform: scale(0.5); }
+    }
+
+    /* OPENING SCREEN */
     .opening {
       height: 100vh;
       width: 100%;
@@ -30,9 +54,10 @@
       align-items: center;
       text-align: center;
       padding: 30px;
-      background:
-        radial-gradient(circle at center, #242424 0%, #0c0c0c 45%, #000 100%);
+      /* Wine colored radial gradient */
+      background: radial-gradient(circle at center, #5e101a 0%, #3a0810 45%, transparent 100%);
       position: relative;
+      z-index: 1; /* Keep above stars */
     }
 
     .opening-content {
@@ -79,7 +104,6 @@
         opacity: 0;
         transform: translateY(15px);
       }
-
       to {
         opacity: 1;
         transform: translateY(0);
@@ -90,14 +114,12 @@
       0%, 100% {
         transform: scale(1);
       }
-
       50% {
         transform: scale(1.25);
       }
     }
 
     /* CONTINUE BUTTON */
-
     .continue {
       position: absolute;
       bottom: 45px;
@@ -122,20 +144,20 @@
       0%, 100% {
         transform: translateY(0);
       }
-
       50% {
         transform: translateY(7px);
       }
     }
 
     /* LETTER SECTION */
-
     .letter-section {
       min-height: 100vh;
       padding: 90px 25px;
       text-align: center;
-      background:
-        radial-gradient(circle at top, #20191b 0%, #0b0b0b 50%, #000 100%);
+      /* Wine colored radial gradient */
+      background: radial-gradient(circle at top, #4a0d15 0%, #2b040a 50%, transparent 100%);
+      position: relative;
+      z-index: 1; /* Keep above stars */
     }
 
     .letter-section h1 {
@@ -145,7 +167,7 @@
     }
 
     .subtitle {
-      color: #999;
+      color: #d1b8bc;
       font-size: 15px;
       margin-bottom: 50px;
     }
@@ -156,7 +178,7 @@
       text-align: left;
       line-height: 1.9;
       font-size: 17px;
-      color: #ddd;
+      color: #eedddf;
     }
 
     .letter p {
@@ -177,11 +199,10 @@
     }
 
     /* BUTTON */
-
     .reveal-button {
       margin-top: 25px;
       padding: 13px 28px;
-      border: 1px solid #777;
+      border: 1px solid #c98892;
       border-radius: 30px;
       background: transparent;
       color: white;
@@ -193,16 +214,15 @@
     }
 
     .reveal-button:hover {
-      background: #fff;
-      color: #000;
+      background: #c98892;
+      color: #1a0205;
     }
 
     /* FINAL MESSAGE */
-
     .final-message {
       margin-top: 70px;
       padding: 40px 20px;
-      border-top: 1px solid #333;
+      border-top: 1px solid #5e101a;
       opacity: 0;
       transform: translateY(20px);
     }
@@ -219,7 +239,7 @@
     }
 
     .final-message p {
-      color: #aaa;
+      color: #eedddf;
       line-height: 1.8;
       font-size: 16px;
     }
@@ -231,183 +251,105 @@
     }
 
     /* HIDDEN UNTIL CONTINUE */
-
     #letterSection {
       display: none;
     }
-
   </style>
 </head>
 
 <body>
 
+  <!-- FIXED STAR BACKGROUND -->
+  <div id="star-container"></div>
+
   <!-- OPENING -->
-
   <section class="opening">
-
     <div class="opening-content">
-
-      <div class="line line1">
-        Hey…
-      </div>
-
-      <div class="line line2">
-        Before you scroll…
-      </div>
-
-      <div class="line line3">
-       To The Most Beautiful Girl In The World...
-      </div>
-
-      <div class="heart">
-        💫
-      </div>
-
+      <div class="line line1">Hey…</div>
+      <div class="line line2">Before you scroll…</div>
+      <div class="line line3">To The Most Beautiful Girl In The World...</div>
+      <div class="heart">💫</div>
     </div>
-
     <div class="continue" onclick="showLetter()">
       CONTINUE
       <span class="arrow">↓</span>
     </div>
-
   </section>
-
 
   <!-- LETTER -->
-
   <section class="letter-section" id="letterSection">
-
     <h1>A little something for you…</h1>
-
-    <div class="subtitle">
-      Take your time. There's no need to rush this.
-    </div>
-
+    <div class="subtitle">Take your time. There's no need to rush this.</div>
 
     <div class="letter">
-
-      <p id="p1">
-        It's been more than 3 years, since you entered in my life and every year I wait for this day eagerly 
-      </p>
-
-      <p id="p2">
-        You always deserve the princess treatment from me
-      </p>
-
-      <p id="p3">
-        The conversations, the laughs, the silly things,
-        the difficult days, and even the completely ordinary moments…
-        somehow became special because you were there.
-      </p>
-
-      <p id="p4">
-        And if there's one thing I want you to know,
-        it's that I genuinely appreciate you.
-        More than I probably say.
-        More than I probably show.
-      </p>
-
-      <p id="p5">
-        So today, I don't want to make this complicated.
-        I just want to wish you something simple…
-        happiness, peace, beautiful moments,
-        and plenty of reasons to smile.
-      </p>
-
-      <p id="p6">
-        And whenever life gets a little too fast,
-        I hope you remember to stop for a moment,
-        breathe,
-        and enjoy the little things.
-      </p>
-
+      <p id="p1">It's been more than 3 years, since you entered in my life and every year I wait for this day eagerly.</p>
+      <p id="p2">You always deserve the princess treatment from me.</p>
+      <p id="p3">The conversations, the laughs, the silly things, the difficult days, and even the completely ordinary moments… somehow became special because you were there.</p>
+      <p id="p4">And if there's one thing I want you to know, it's that I genuinely appreciate you. More than I probably say. More than I probably show.</p>
+      <p id="p5">So today, I don't want to make this complicated. I just want to wish you something simple… happiness, peace, beautiful moments, and plenty of reasons to smile.</p>
+      <p id="p6">And whenever life gets a little too fast, I hope you remember to stop for a moment, breathe, and enjoy the little things.</p>
     </div>
 
-
-    <button class="reveal-button" onclick="revealLetter()">
-      THERE'S MORE…
-    </button>
-
+    <button class="reveal-button" onclick="revealLetter()">THERE'S MORE…</button>
 
     <div class="final-message" id="finalMessage">
-
       <h2>Happy Birthday ❤️</h2>
-
-      <p>
-        Here's to another year of your beautiful existence.
-        May this year be kinder to you,
-        bring you closer to everything you dream about,
-        and give you countless reasons to be happy.
-      </p>
-
-      <div class="final-heart">
-        ❤️
-      </div>
-
+      <p>Here's to another year of your beautiful existence. May this year be kinder to you, bring you closer to everything you dream about, and give you countless reasons to be happy.</p>
+      <div class="final-heart">❤️</div>
     </div>
-
   </section>
 
-
   <script>
+    // --- STAR GENERATION ---
+    function createStars() {
+      const container = document.getElementById('star-container');
+      const starCount = 120; // Adjust for more or fewer stars
 
-    function showLetter() {
-
-      const letter = document.getElementById("letterSection");
-
-      letter.style.display = "block";
-
-      setTimeout(() => {
-
-        letter.scrollIntoView({
-          behavior: "smooth"
-        });
-
-        setTimeout(() => {
-          document.getElementById("p1").classList.add("show");
-        }, 700);
-
-        setTimeout(() => {
-          document.getElementById("p2").classList.add("show");
-        }, 1800);
-
-        setTimeout(() => {
-          document.getElementById("p3").classList.add("show");
-        }, 2900);
-
-      }, 100);
-
+      for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        
+        // Randomize placement
+        star.style.left = `${Math.random() * 100}vw`;
+        star.style.top = `${Math.random() * 100}vh`;
+        
+        // Randomize size
+        const size = Math.random() * 2 + 1; 
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        
+        // Randomize animation speed and delay so they twinkle at different times
+        star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+        star.style.animationDelay = `${Math.random() * 3}s`;
+        
+        container.appendChild(star);
+      }
     }
+    window.onload = createStars;
 
+    // --- LETTER ANIMATIONS ---
+    function showLetter() {
+      const letter = document.getElementById("letterSection");
+      letter.style.display = "block";
+      setTimeout(() => {
+        letter.scrollIntoView({ behavior: "smooth" });
+        setTimeout(() => { document.getElementById("p1").classList.add("show"); }, 700);
+        setTimeout(() => { document.getElementById("p2").classList.add("show"); }, 1800);
+        setTimeout(() => { document.getElementById("p3").classList.add("show"); }, 2900);
+      }, 100);
+    }
 
     function revealLetter() {
-
       document.getElementById("p4").classList.add("show");
-
+      setTimeout(() => { document.getElementById("p5").classList.add("show"); }, 900);
+      setTimeout(() => { document.getElementById("p6").classList.add("show"); }, 1800);
       setTimeout(() => {
-        document.getElementById("p5").classList.add("show");
-      }, 900);
-
-      setTimeout(() => {
-        document.getElementById("p6").classList.add("show");
-      }, 1800);
-
-      setTimeout(() => {
-
         document.getElementById("finalMessage").classList.add("show");
-
         setTimeout(() => {
-
-          document.getElementById("finalMessage").scrollIntoView({
-            behavior: "smooth"
-          });
-
+          document.getElementById("finalMessage").scrollIntoView({ behavior: "smooth" });
         }, 500);
-
       }, 3000);
-
     }
-
   </script>
 
 </body>
