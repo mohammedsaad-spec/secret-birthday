@@ -128,52 +128,111 @@
       }
     }
 
-    /* PHOTO SECTION */
+    /* LETTER SECTION */
 
-    .memories {
+    .letter-section {
       min-height: 100vh;
-      padding: 80px 20px;
+      padding: 90px 25px;
       text-align: center;
-      background: #0b0b0b;
+      background:
+        radial-gradient(circle at top, #20191b 0%, #0b0b0b 50%, #000 100%);
     }
 
-    .memories h1 {
-      font-size: 27px;
+    .letter-section h1 {
+      font-size: 28px;
       font-weight: normal;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
     }
 
-    .memories p {
-      color: #aaa;
-      margin-bottom: 45px;
+    .subtitle {
+      color: #999;
+      font-size: 15px;
+      margin-bottom: 50px;
     }
 
-    .photo {
-      width: 90%;
-      max-width: 420px;
-      margin: 0 auto 55px;
+    .letter {
+      max-width: 550px;
+      margin: auto;
+      text-align: left;
+      line-height: 1.9;
+      font-size: 17px;
+      color: #ddd;
+    }
+
+    .letter p {
+      margin-bottom: 28px;
       opacity: 0;
-      transform: translateY(30px);
-      animation: photoAppear 1.5s ease forwards;
+      transform: translateY(20px);
     }
 
-    .photo img {
-      width: 100%;
-      border-radius: 14px;
-      display: block;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    .letter p.show {
+      animation: letterAppear 1.2s ease forwards;
     }
 
-    @keyframes photoAppear {
+    @keyframes letterAppear {
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
 
+    /* BUTTON */
+
+    .reveal-button {
+      margin-top: 25px;
+      padding: 13px 28px;
+      border: 1px solid #777;
+      border-radius: 30px;
+      background: transparent;
+      color: white;
+      font-family: Georgia, serif;
+      font-size: 14px;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .reveal-button:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    /* FINAL MESSAGE */
+
+    .final-message {
+      margin-top: 70px;
+      padding: 40px 20px;
+      border-top: 1px solid #333;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .final-message.show {
+      animation: letterAppear 1.5s ease forwards;
+    }
+
+    .final-message h2 {
+      font-size: 25px;
+      font-weight: normal;
+      color: #f5d7dc;
+      margin-bottom: 20px;
+    }
+
+    .final-message p {
+      color: #aaa;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .final-heart {
+      font-size: 30px;
+      margin-top: 25px;
+      animation: heartbeat 1.5s infinite;
+    }
+
     /* HIDDEN UNTIL CONTINUE */
 
-    #memories {
+    #letterSection {
       display: none;
     }
 
@@ -206,7 +265,7 @@
 
     </div>
 
-    <div class="continue" onclick="showMemories()">
+    <div class="continue" onclick="showLetter()">
       CONTINUE
       <span class="arrow">↓</span>
     </div>
@@ -214,54 +273,81 @@
   </section>
 
 
-  <!-- MEMORIES -->
+  <!-- LETTER -->
 
-  <section class="memories" id="memories">
+  <section class="letter-section" id="letterSection">
 
     <h1>A little something for you…</h1>
 
-    <p>Some moments are worth staying for.</p>
-
-
-    <!-- PHOTO 1 -->
-
-    <div class="photo">
-      <img src="image_3.png" alt="Our memory">
+    <div class="subtitle">
+      Take your time. There's no need to rush this.
     </div>
 
 
-    <!-- PHOTO 2 -->
+    <div class="letter">
 
-    <div class="photo">
-      <img src="image_4.png" alt="Our memory">
+      <p id="p1">
+        I don't really know how to put everything I feel into words.
+        But I know that some people enter your life quietly…
+        and somehow end up becoming a very important part of it.
+      </p>
+
+      <p id="p2">
+        You became one of those people for me.
+        Not because of one particular moment,
+        but because of all the little moments that slowly became memories.
+      </p>
+
+      <p id="p3">
+        The conversations, the laughs, the silly things,
+        the difficult days, and even the completely ordinary moments…
+        somehow became special because you were there.
+      </p>
+
+      <p id="p4">
+        And if there's one thing I want you to know,
+        it's that I genuinely appreciate you.
+        More than I probably say.
+        More than I probably show.
+      </p>
+
+      <p id="p5">
+        So today, I don't want to make this complicated.
+        I just want to wish you something simple…
+        happiness, peace, beautiful moments,
+        and plenty of reasons to smile.
+      </p>
+
+      <p id="p6">
+        And whenever life gets a little too fast,
+        I hope you remember to stop for a moment,
+        breathe,
+        and enjoy the little things.
+      </p>
+
     </div>
 
 
-    <!-- PHOTO 3 -->
-
-    <div class="photo">
-      <img src="image_5.png" alt="Our memory">
-    </div>
+    <button class="reveal-button" onclick="revealLetter()">
+      THERE'S MORE…
+    </button>
 
 
-    <!-- PHOTO 4 -->
+    <div class="final-message" id="finalMessage">
 
-    <div class="photo">
-      <img src="image_6.png" alt="Our memory">
-    </div>
+      <h2>Happy Birthday ❤️</h2>
 
+      <p>
+        Here's to another year of your beautiful existence.
+        May this year be kinder to you,
+        bring you closer to everything you dream about,
+        and give you countless reasons to be happy.
+      </p>
 
-    <!-- PHOTO 5 -->
+      <div class="final-heart">
+        ❤️
+      </div>
 
-    <div class="photo">
-      <img src="image_7.png" alt="Our memory">
-    </div>
-
-
-    <!-- PHOTO 6 -->
-
-    <div class="photo">
-      <img src="image_8.png" alt="Our memory">
     </div>
 
   </section>
@@ -269,17 +355,60 @@
 
   <script>
 
-    function showMemories() {
+    function showLetter() {
 
-      const memories = document.getElementById("memories");
+      const letter = document.getElementById("letterSection");
 
-      memories.style.display = "block";
+      letter.style.display = "block";
 
       setTimeout(() => {
-        memories.scrollIntoView({
+
+        letter.scrollIntoView({
           behavior: "smooth"
         });
+
+        setTimeout(() => {
+          document.getElementById("p1").classList.add("show");
+        }, 700);
+
+        setTimeout(() => {
+          document.getElementById("p2").classList.add("show");
+        }, 1800);
+
+        setTimeout(() => {
+          document.getElementById("p3").classList.add("show");
+        }, 2900);
+
       }, 100);
+
+    }
+
+
+    function revealLetter() {
+
+      document.getElementById("p4").classList.add("show");
+
+      setTimeout(() => {
+        document.getElementById("p5").classList.add("show");
+      }, 900);
+
+      setTimeout(() => {
+        document.getElementById("p6").classList.add("show");
+      }, 1800);
+
+      setTimeout(() => {
+
+        document.getElementById("finalMessage").classList.add("show");
+
+        setTimeout(() => {
+
+          document.getElementById("finalMessage").scrollIntoView({
+            behavior: "smooth"
+          });
+
+        }, 500);
+
+      }, 3000);
 
     }
 
