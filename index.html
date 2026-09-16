@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>To The Most Beautiful Girl In The World</title>
+  <title>To The Most Beautiful Girl In The World ❤️</title>
 
   <style>
     * {
@@ -13,15 +13,22 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      background: #1a0205; /* Deep wine base */
+      background: #1a0205;
       color: white;
       font-family: Georgia, "Times New Roman", serif;
       overflow-x: hidden;
-      transition: background 1.5s ease; /* Smooth transition for background change */
+      transition: background 1.5s ease;
     }
 
-    /* SPARKLING STARS BACKGROUND */
+    /* =========================================
+       SPARKLING STARS
+       ========================================= */
+
     #star-container {
       position: fixed;
       top: 0;
@@ -41,12 +48,27 @@
     }
 
     @keyframes twinkle {
-      0% { opacity: 0; transform: scale(0.5); }
-      50% { opacity: 0.8; transform: scale(1.2); box-shadow: 0 0 5px white; }
-      100% { opacity: 0; transform: scale(0.5); }
+      0% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+
+      50% {
+        opacity: 0.8;
+        transform: scale(1.2);
+        box-shadow: 0 0 5px white;
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
     }
 
-    /* OPENING SCREEN */
+    /* =========================================
+       OPENING SCREEN
+       ========================================= */
+
     .opening {
       height: 100vh;
       width: 100%;
@@ -55,13 +77,22 @@
       align-items: center;
       text-align: center;
       padding: 30px;
-      background: radial-gradient(circle at center, #5e101a 0%, #3a0810 45%, transparent 100%);
+      background:
+        radial-gradient(
+          circle at center,
+          #5e101a 0%,
+          #3a0810 45%,
+          transparent 100%
+        );
       position: relative;
       z-index: 1;
+      overflow: hidden;
     }
 
     .opening-content {
       max-width: 500px;
+      position: relative;
+      z-index: 3;
     }
 
     .line {
@@ -100,16 +131,130 @@
     }
 
     @keyframes appear {
-      from { opacity: 0; transform: translateY(15px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @keyframes heartbeat {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.25); }
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.25);
+      }
     }
 
-    /* CONTINUE BUTTON */
+    /* =========================================
+       BURGUNDY DECORATIONS
+       ========================================= */
+
+    .burgundy-dog {
+      position: absolute;
+      left: -8px;
+      bottom: 20px;
+      font-size: 85px;
+      opacity: 0.20;
+      filter: drop-shadow(0 0 15px rgba(255, 170, 180, 0.25));
+      transform: rotate(-5deg);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .burgundy-paw {
+      position: absolute;
+      font-size: 22px;
+      opacity: 0.18;
+      color: #f5d7dc;
+      pointer-events: none;
+      animation: pawFloat 6s ease-in-out infinite;
+      z-index: 1;
+    }
+
+    .paw1 {
+      right: 8%;
+      top: 22%;
+      animation-delay: 0s;
+    }
+
+    .paw2 {
+      right: 15%;
+      top: 28%;
+      animation-delay: 1s;
+    }
+
+    .paw3 {
+      left: 7%;
+      top: 55%;
+      animation-delay: 2s;
+    }
+
+    .paw4 {
+      left: 13%;
+      top: 61%;
+      animation-delay: 3s;
+    }
+
+    @keyframes pawFloat {
+      0%, 100% {
+        transform: translateY(0) rotate(-8deg);
+        opacity: 0.12;
+      }
+
+      50% {
+        transform: translateY(-8px) rotate(5deg);
+        opacity: 0.27;
+      }
+    }
+
+    .burgundy-heart {
+      position: absolute;
+      color: #ffb3bd;
+      opacity: 0.25;
+      font-size: 25px;
+      pointer-events: none;
+      animation: heartFloat 5s ease-in-out infinite;
+      z-index: 1;
+    }
+
+    .heart1 {
+      right: 10%;
+      top: 45%;
+    }
+
+    .heart2 {
+      left: 8%;
+      top: 35%;
+      animation-delay: 2s;
+    }
+
+    .heart3 {
+      right: 18%;
+      bottom: 15%;
+      animation-delay: 1s;
+    }
+
+    @keyframes heartFloat {
+      0%, 100% {
+        transform: translateY(0) scale(1);
+      }
+
+      50% {
+        transform: translateY(-10px) scale(1.15);
+      }
+    }
+
+    /* =========================================
+       CONTINUE BUTTON
+       ========================================= */
+
     .continue {
       position: absolute;
       bottom: 45px;
@@ -121,6 +266,7 @@
       font-size: 14px;
       letter-spacing: 2px;
       cursor: pointer;
+      z-index: 4;
     }
 
     .arrow {
@@ -131,30 +277,49 @@
     }
 
     @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(7px); }
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(7px);
+      }
     }
 
-    /* LETTER SECTION */
+    /* =========================================
+       LETTER SECTION
+       ========================================= */
+
     .letter-section {
       min-height: 100vh;
       padding: 90px 25px;
       text-align: center;
-      background: radial-gradient(circle at top, #4a0d15 0%, #2b040a 50%, transparent 100%);
+      background:
+        radial-gradient(
+          circle at top,
+          #4a0d15 0%,
+          #2b040a 50%,
+          transparent 100%
+        );
       position: relative;
       z-index: 1;
+      overflow: hidden;
     }
 
     .letter-section h1 {
       font-size: 28px;
       font-weight: normal;
       margin-bottom: 12px;
+      position: relative;
+      z-index: 3;
     }
 
     .subtitle {
       color: #d1b8bc;
       font-size: 15px;
       margin-bottom: 50px;
+      position: relative;
+      z-index: 3;
     }
 
     .letter {
@@ -164,6 +329,8 @@
       line-height: 1.9;
       font-size: 17px;
       color: #eedddf;
+      position: relative;
+      z-index: 3;
     }
 
     .letter p {
@@ -177,10 +344,16 @@
     }
 
     @keyframes letterAppear {
-      to { opacity: 1; transform: translateY(0); }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    /* BUTTONS */
+    /* =========================================
+       BUTTONS
+       ========================================= */
+
     .reveal-button {
       margin-top: 25px;
       padding: 13px 28px;
@@ -193,30 +366,39 @@
       letter-spacing: 1px;
       cursor: pointer;
       transition: 0.3s;
+      position: relative;
+      z-index: 4;
     }
 
     .reveal-button:hover {
       background: #c98892;
       color: #1a0205;
+      box-shadow: 0 0 20px rgba(201, 136, 146, 0.35);
     }
 
     .secret-button {
       margin-top: 40px;
       border-color: #8faadb;
     }
-    
+
     .secret-button:hover {
       background: #8faadb;
       color: #030b17;
+      box-shadow: 0 0 20px rgba(143, 170, 219, 0.35);
     }
 
-    /* FINAL MESSAGE */
+    /* =========================================
+       FINAL MESSAGE
+       ========================================= */
+
     .final-message {
       margin-top: 70px;
       padding: 40px 20px;
       border-top: 1px solid #5e101a;
       opacity: 0;
       transform: translateY(20px);
+      position: relative;
+      z-index: 3;
     }
 
     .final-message.show {
@@ -242,27 +424,135 @@
       animation: heartbeat 1.5s infinite;
     }
 
-    /* HIDDEN UNTIL CONTINUE */
+    /* =========================================
+       HIDDEN UNTIL CONTINUE
+       ========================================= */
+
     #letterSection {
       display: none;
     }
 
-    /* --- NEW SECRET PAGE --- */
+    /* =========================================
+       SECRET BLUE PAGE
+       ========================================= */
+
     .secret-page {
-      display: none; /* Hidden by default */
+      display: none;
       min-height: 100vh;
       width: 100%;
       padding: 80px 25px;
       position: relative;
       z-index: 2;
-      cursor: pointer; /* Indicates it can be tapped */
+      cursor: pointer;
       text-align: left;
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(10, 31, 61, 0.85) 0%,
+          rgba(3, 11, 23, 0.95) 60%,
+          #000 100%
+        );
     }
 
     .secret-content {
       max-width: 550px;
       margin: auto;
+      position: relative;
+      z-index: 3;
     }
+
+    /* =========================================
+       BLUE PAGE MOON
+       ========================================= */
+
+    .blue-moon {
+      position: absolute;
+      top: 55px;
+      right: 45px;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: #e9f1ff;
+      box-shadow:
+        0 0 20px rgba(220, 235, 255, 0.5),
+        0 0 50px rgba(120, 160, 230, 0.2);
+      opacity: 0.75;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .blue-moon::after {
+      content: "";
+      position: absolute;
+      top: -5px;
+      left: 15px;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: #07152b;
+    }
+
+    /* =========================================
+       BLUE PAGE DOG
+       ========================================= */
+
+    .blue-dog {
+      position: absolute;
+      bottom: 25px;
+      right: 5%;
+      font-size: 100px;
+      opacity: 0.22;
+      filter: drop-shadow(0 0 18px rgba(143, 170, 219, 0.35));
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* =========================================
+       BLUE PAW PRINTS
+       ========================================= */
+
+    .blue-paw {
+      position: absolute;
+      color: #9bbcf5;
+      font-size: 23px;
+      opacity: 0.18;
+      pointer-events: none;
+      animation: bluePawFloat 7s ease-in-out infinite;
+      z-index: 1;
+    }
+
+    .blue-paw1 {
+      left: 7%;
+      top: 25%;
+    }
+
+    .blue-paw2 {
+      left: 13%;
+      top: 32%;
+      animation-delay: 1s;
+    }
+
+    .blue-paw3 {
+      right: 10%;
+      top: 15%;
+      animation-delay: 2s;
+    }
+
+    @keyframes bluePawFloat {
+      0%, 100% {
+        transform: translateY(0) rotate(-10deg);
+      }
+
+      50% {
+        transform: translateY(-12px) rotate(8deg);
+      }
+    }
+
+    /* =========================================
+       SECRET MEMORIES
+       ========================================= */
 
     .secret-point {
       font-size: 18px;
@@ -272,11 +562,19 @@
       opacity: 0;
       transform: translateY(20px);
       transition: all 1.2s ease;
+      text-shadow: 0 0 8px rgba(143, 170, 219, 0.12);
+      padding-left: 5px;
     }
 
     .secret-point.show {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    /* Highlight personal memories */
+
+    .secret-point::first-letter {
+      color: #9bbcf5;
     }
 
     .secret-final {
@@ -290,13 +588,19 @@
       opacity: 0;
       transform: scale(0.95);
       transition: all 1.5s ease;
-      text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+      text-shadow:
+        0 0 15px rgba(255, 255, 255, 0.4),
+        0 0 35px rgba(100, 150, 255, 0.2);
     }
 
     .secret-final.show {
       opacity: 1;
       transform: scale(1);
     }
+
+    /* =========================================
+       TAP HINT
+       ========================================= */
 
     .tap-hint {
       position: fixed;
@@ -307,7 +611,74 @@
       color: #8faadb;
       letter-spacing: 2px;
       animation: bounce 1.5s infinite;
-      pointer-events: none; /* Allows clicking right through it */
+      pointer-events: none;
+      z-index: 5;
+      text-align: center;
+    }
+
+    /* =========================================
+       MOBILE ADJUSTMENTS
+       ========================================= */
+
+    @media (max-width: 600px) {
+
+      .line1 {
+        font-size: 21px;
+      }
+
+      .line2 {
+        font-size: 17px;
+      }
+
+      .line3 {
+        font-size: 23px;
+      }
+
+      .letter-section {
+        padding: 75px 22px;
+      }
+
+      .letter {
+        font-size: 16px;
+        line-height: 1.85;
+      }
+
+      .secret-page {
+        padding: 75px 22px;
+      }
+
+      .secret-point {
+        font-size: 17px;
+        line-height: 1.8;
+      }
+
+      .secret-final {
+        font-size: 21px;
+      }
+
+      .burgundy-dog {
+        font-size: 65px;
+        left: -10px;
+        bottom: 15px;
+      }
+
+      .blue-dog {
+        font-size: 75px;
+        right: -5px;
+        bottom: 20px;
+      }
+
+      .blue-moon {
+        width: 45px;
+        height: 45px;
+        right: 25px;
+        top: 30px;
+      }
+
+      .blue-moon::after {
+        width: 45px;
+        height: 45px;
+      }
     }
 
   </style>
@@ -315,154 +686,515 @@
 
 <body>
 
-  <!-- FIXED STAR BACKGROUND -->
+  <!-- =========================================
+       STAR BACKGROUND
+       ========================================= -->
+
   <div id="star-container"></div>
 
-  <!-- WRAPPER FOR PART 1 (EASY TO HIDE LATER) -->
+
+  <!-- =========================================
+       PART ONE
+       ========================================= -->
+
   <div id="partOne">
-    
-    <!-- OPENING -->
+
+    <!-- =======================================
+         OPENING
+         ======================================= -->
+
     <section class="opening">
+
+      <!-- BURGUNDY DECOR -->
+      <div class="burgundy-dog">🐕</div>
+
+      <div class="burgundy-paw paw1">🐾</div>
+      <div class="burgundy-paw paw2">🐾</div>
+      <div class="burgundy-paw paw3">🐾</div>
+      <div class="burgundy-paw paw4">🐾</div>
+
+      <div class="burgundy-heart heart1">♡</div>
+      <div class="burgundy-heart heart2">♡</div>
+      <div class="burgundy-heart heart3">♡</div>
+
+
+      <!-- OPENING TEXT -->
+
       <div class="opening-content">
-        <div class="line line1">Hey…</div>
-        <div class="line line2">Before you scroll…</div>
-        <div class="line line3">To The Most Beautiful Girl In The World...</div>
-        <div class="heart">💫</div>
+
+        <div class="line line1">
+          Hey…
+        </div>
+
+        <div class="line line2">
+          Before you scroll…
+        </div>
+
+        <div class="line line3">
+          To The Most Beautiful Girl In The World...
+        </div>
+
+        <div class="heart">
+          💫
+        </div>
+
       </div>
+
+
+      <!-- CONTINUE -->
+
       <div class="continue" onclick="showLetter()">
+
         CONTINUE
-        <span class="arrow">↓</span>
+
+        <span class="arrow">
+          ↓
+        </span>
+
       </div>
+
     </section>
 
-    <!-- LETTER -->
+
+    <!-- =======================================
+         LETTER
+         ======================================= -->
+
     <section class="letter-section" id="letterSection">
-      <h1>A little something for you…</h1>
-      <div class="subtitle">Take your time. There's no need to rush this.</div>
+
+      <!-- DECORATIVE DETAILS -->
+
+      <div class="burgundy-paw paw1">🐾</div>
+      <div class="burgundy-paw paw3">🐾</div>
+
+      <div class="burgundy-heart heart2">♡</div>
+
+
+      <h1>
+        A little something for you…
+      </h1>
+
+      <div class="subtitle">
+        Take your time. There's no need to rush this.
+      </div>
+
 
       <div class="letter">
-        <p id="p1">It's been more than 3 years, since you entered in my life and every year I wait for this day eagerly.</p>
-        <p id="p2">You always deserve the princess treatment from me.</p>
-        <p id="p3">The conversations, the laughs, the silly things, the difficult days, and even the completely ordinary moments… somehow became special because you were there.</p>
-        <p id="p4">And if there's one thing I want you to know, it's that I genuinely appreciate you. More than I probably say. More than I probably show.</p>
-        <p id="p5">So today, I don't want to make this complicated. I just want to wish you something simple… happiness, peace, beautiful moments, and plenty of reasons to smile.</p>
-        <p id="p6">And whenever life gets a little too fast, I hope you remember to stop for a moment, breathe, and enjoy the little things.</p>
+
+        <p id="p1">
+          It's been more than 3 years, since you entered in my life and every year I wait for this day eagerly.
+        </p>
+
+        <p id="p2">
+          You always deserve the princess treatment from me.
+        </p>
+
+        <p id="p3">
+          The conversations, the laughs, the silly things, the difficult days, and even the completely ordinary moments… somehow became special because you were there.
+        </p>
+
+        <p id="p4">
+          And if there's one thing I want you to know, it's that I genuinely appreciate you. More than I probably say. More than I probably show.
+        </p>
+
+        <p id="p5">
+          So today, I don't want to make this complicated. I just want to wish you something simple… happiness, peace, beautiful moments, and plenty of reasons to smile.
+        </p>
+
+        <p id="p6">
+          And whenever life gets a little too fast, I hope you remember to stop for a moment, breathe, and enjoy the little things.
+        </p>
+
       </div>
 
-      <button class="reveal-button" onclick="revealLetter()">THERE'S MORE…</button>
 
-      <div class="final-message" id="finalMessage">
-        <h2>Happy Birthday ❤️</h2>
-        <p>Here's to another year of your beautiful existence. May this year be kinder to you, bring you closer to everything you dream about, and give you countless reasons to be happy.</p>
-        <div class="final-heart">❤️</div>
-        
-        <!-- NEW BUTTON FOR SECRET PAGE -->
-        <button class="reveal-button secret-button" onclick="openSecretPage()">WAIT THERE STILL MORE</button>
+      <!-- FIRST REVEAL -->
+
+      <button
+        class="reveal-button"
+        onclick="revealLetter()"
+      >
+        THERE'S MORE…
+      </button>
+
+
+      <!-- =====================================
+           FINAL BIRTHDAY MESSAGE
+           ===================================== -->
+
+      <div
+        class="final-message"
+        id="finalMessage"
+      >
+
+        <h2>
+          Happy Birthday ❤️
+        </h2>
+
+        <p>
+          Here's to another year of your beautiful existence.
+          May this year be kinder to you, bring you closer to everything
+          you dream about, and give you countless reasons to be happy.
+        </p>
+
+        <div class="final-heart">
+          ❤️
+        </div>
+
+
+        <!-- SECRET PAGE BUTTON -->
+
+        <button
+          class="reveal-button secret-button"
+          onclick="openSecretPage()"
+        >
+          WAIT… THERE'S STILL MORE
+        </button>
+
       </div>
+
     </section>
 
   </div>
 
-  <!-- NEW SECRET PAGE (NAVY BLUE THEME) -->
-  <section class="secret-page" id="secretPage" onclick="revealNextPoint()">
+
+  <!-- =========================================
+       SECRET BLUE PAGE
+       ========================================= -->
+
+  <section
+    class="secret-page"
+    id="secretPage"
+    onclick="revealNextPoint()"
+  >
+
+    <!-- BLUE DECOR -->
+
+    <div class="blue-moon"></div>
+
+    <div class="blue-paw blue-paw1">
+      🐾
+    </div>
+
+    <div class="blue-paw blue-paw2">
+      🐾
+    </div>
+
+    <div class="blue-paw blue-paw3">
+      🐾
+    </div>
+
+    <div class="blue-dog">
+      🐕
+    </div>
+
+
+    <!-- SECRET CONTENT -->
+
     <div class="secret-content">
-      <p class="secret-point" id="point1">1. I still remember the face you made while drinking water</p>
-      <p class="secret-point" id="point2">2. I still remember the shocking moment after Naina discovered something</p>
-      <p class="secret-point" id="point3">3. I still remember the first food from you "Dal Khichdi"</p>
-      <p class="secret-point" id="point4">4. I'll always love you the way I did n I'm doing</p>
-      
-      <h2 class="secret-final" id="point5">YOU DESERVE ALL THE HAPPINESS AND EVERYTHING YOU DESIRE</h2>
+
+      <p
+        class="secret-point"
+        id="point1"
+      >
+        1. I still remember the face you made while drinking water
+      </p>
+
+
+      <p
+        class="secret-point"
+        id="point2"
+      >
+        2. I still remember the shocking moment after Naina discovered something
+      </p>
+
+
+      <p
+        class="secret-point"
+        id="point3"
+      >
+        3. I still remember the first food from you — "Dal Khichdi"
+      </p>
+
+
+      <p
+        class="secret-point"
+        id="point4"
+      >
+        4. I'll always love you the way I did, and I'm doing
+      </p>
+
+
+      <h2
+        class="secret-final"
+        id="point5"
+      >
+        YOU DESERVE ALL THE HAPPINESS
+        <br>
+        AND EVERYTHING YOU DESIRE
+        ❤️
+      </h2>
+
     </div>
-    
-    <div class="tap-hint" id="tapHint">
+
+
+    <!-- TAP HINT -->
+
+    <div
+      class="tap-hint"
+      id="tapHint"
+    >
+
       TAP ANYWHERE
-      <span class="arrow">↓</span>
+
+      <span class="arrow">
+        ↓
+      </span>
+
     </div>
+
   </section>
 
 
+  <!-- =========================================
+       JAVASCRIPT
+       ========================================= -->
+
   <script>
-    // --- STAR GENERATION ---
+
+    /* =========================================
+       STAR GENERATION
+       ========================================= */
+
     function createStars() {
-      const container = document.getElementById('star-container');
+
+      const container =
+        document.getElementById("star-container");
+
       const starCount = 120;
 
       for (let i = 0; i < starCount; i++) {
-        const star = document.createElement('div');
-        star.classList.add('star');
-        
-        star.style.left = `${Math.random() * 100}vw`;
-        star.style.top = `${Math.random() * 100}vh`;
-        
-        const size = Math.random() * 2 + 1; 
-        star.style.width = `${size}px`;
-        star.style.height = `${size}px`;
-        
-        star.style.animationDuration = `${Math.random() * 3 + 2}s`;
-        star.style.animationDelay = `${Math.random() * 3}s`;
-        
+
+        const star =
+          document.createElement("div");
+
+        star.classList.add("star");
+
+        star.style.left =
+          `${Math.random() * 100}vw`;
+
+        star.style.top =
+          `${Math.random() * 100}vh`;
+
+        const size =
+          Math.random() * 2 + 1;
+
+        star.style.width =
+          `${size}px`;
+
+        star.style.height =
+          `${size}px`;
+
+        star.style.animationDuration =
+          `${Math.random() * 3 + 2}s`;
+
+        star.style.animationDelay =
+          `${Math.random() * 3}s`;
+
         container.appendChild(star);
+
       }
+
     }
+
+
     window.onload = createStars;
 
-    // --- LETTER ANIMATIONS ---
+
+    /* =========================================
+       SHOW LETTER
+       ========================================= */
+
     function showLetter() {
-      const letter = document.getElementById("letterSection");
+
+      const letter =
+        document.getElementById("letterSection");
+
       letter.style.display = "block";
+
       setTimeout(() => {
-        letter.scrollIntoView({ behavior: "smooth" });
-        setTimeout(() => { document.getElementById("p1").classList.add("show"); }, 700);
-        setTimeout(() => { document.getElementById("p2").classList.add("show"); }, 1800);
-        setTimeout(() => { document.getElementById("p3").classList.add("show"); }, 2900);
+
+        letter.scrollIntoView({
+          behavior: "smooth"
+        });
+
+        setTimeout(() => {
+
+          document
+            .getElementById("p1")
+            .classList
+            .add("show");
+
+        }, 700);
+
+
+        setTimeout(() => {
+
+          document
+            .getElementById("p2")
+            .classList
+            .add("show");
+
+        }, 1800);
+
+
+        setTimeout(() => {
+
+          document
+            .getElementById("p3")
+            .classList
+            .add("show");
+
+        }, 2900);
+
       }, 100);
+
     }
+
+
+    /* =========================================
+       REVEAL MORE LETTER
+       ========================================= */
 
     function revealLetter() {
-      document.getElementById("p4").classList.add("show");
-      setTimeout(() => { document.getElementById("p5").classList.add("show"); }, 900);
-      setTimeout(() => { document.getElementById("p6").classList.add("show"); }, 1800);
+
+      document
+        .getElementById("p4")
+        .classList
+        .add("show");
+
+
       setTimeout(() => {
-        document.getElementById("finalMessage").classList.add("show");
+
+        document
+          .getElementById("p5")
+          .classList
+          .add("show");
+
+      }, 900);
+
+
+      setTimeout(() => {
+
+        document
+          .getElementById("p6")
+          .classList
+          .add("show");
+
+      }, 1800);
+
+
+      setTimeout(() => {
+
+        document
+          .getElementById("finalMessage")
+          .classList
+          .add("show");
+
+
         setTimeout(() => {
-          document.getElementById("finalMessage").scrollIntoView({ behavior: "smooth" });
+
+          document
+            .getElementById("finalMessage")
+            .scrollIntoView({
+              behavior: "smooth"
+            });
+
         }, 500);
+
       }, 3000);
+
     }
 
-    // --- SECRET PAGE LOGIC ---
+
+    /* =========================================
+       SECRET PAGE
+       ========================================= */
+
     let currentPoint = 1;
 
+
     function openSecretPage() {
-      // 1. Hide the old content
-      document.getElementById("partOne").style.display = "none";
-      
-      // 2. Change the body background to Navy Blue 
-      // (The stars are transparent, so they will stay on top of this new color)
-      document.body.style.background = "radial-gradient(circle at center, #0a1f3d 0%, #030b17 60%, #000 100%)";
-      
-      // 3. Show the secret page
-      const secretPage = document.getElementById("secretPage");
+
+      /* Hide first page */
+
+      document
+        .getElementById("partOne")
+        .style
+        .display = "none";
+
+
+      /* Change to navy blue */
+
+      document.body.style.background =
+        "radial-gradient(circle at center, #0a1f3d 0%, #030b17 60%, #000 100%)";
+
+
+      /* Show secret page */
+
+      const secretPage =
+        document.getElementById("secretPage");
+
       secretPage.style.display = "block";
-      
-      // 4. Scroll to top
-      window.scrollTo(0, 0);
+
+
+      /* Start from top */
+
+      window.scrollTo({
+        top: 0,
+        behavior: "instant"
+      });
+
     }
 
-    // This triggers every time the user clicks anywhere on the secret page
+
+    /* =========================================
+       REVEAL SECRET MEMORIES ONE BY ONE
+       ========================================= */
+
     function revealNextPoint() {
+
       if (currentPoint <= 4) {
-        // Show points 1 through 4
-        document.getElementById(`point${currentPoint}`).classList.add("show");
+
+        document
+          .getElementById(`point${currentPoint}`)
+          .classList
+          .add("show");
+
         currentPoint++;
-      } else if (currentPoint === 5) {
-        // Show the final message
-        document.getElementById(`point${currentPoint}`).classList.add("show");
-        // Hide the "Tap Anywhere" hint text since the experience is over
-        document.getElementById("tapHint").style.display = "none";
-        currentPoint++;
+
       }
+
+      else if (currentPoint === 5) {
+
+        document
+          .getElementById("point5")
+          .classList
+          .add("show");
+
+
+        document
+          .getElementById("tapHint")
+          .style
+          .display = "none";
+
+
+        currentPoint++;
+
+      }
+
     }
+
   </script>
 
 </body>
