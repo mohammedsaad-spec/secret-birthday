@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>To The Most Beautiful Girl In The World ❤️</title>
-
-  <style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>To The Most Beautiful Girl In The World ❤️</title>  <style>
     * {
       margin: 0;
       padding: 0;
@@ -77,6 +72,7 @@
       align-items: center;
       text-align: center;
       padding: 30px;
+
       background:
         radial-gradient(
           circle at center,
@@ -84,6 +80,7 @@
           #3a0810 45%,
           transparent 100%
         );
+
       position: relative;
       z-index: 1;
       overflow: hidden;
@@ -125,6 +122,7 @@
       font-size: 25px;
       margin-top: 18px;
       opacity: 0;
+
       animation:
         appear 2s ease forwards 9s,
         heartbeat 1.5s ease-in-out infinite 11s;
@@ -153,28 +151,62 @@
     }
 
     /* =========================================
-       BURGUNDY DECORATIONS
+       BURGUNDY DOGS
        ========================================= */
 
     .burgundy-dog {
       position: absolute;
-      left: -8px;
-      bottom: 20px;
-      font-size: 85px;
+      font-size: 95px;
       opacity: 0.20;
-      filter: drop-shadow(0 0 15px rgba(255, 170, 180, 0.25));
-      transform: rotate(-5deg);
+      filter:
+        drop-shadow(0 0 15px rgba(255, 170, 180, 0.25));
       pointer-events: none;
       z-index: 1;
     }
 
+    .burgundy-dog1 {
+      left: -12px;
+      bottom: 15px;
+      transform: rotate(-5deg);
+    }
+
+    .burgundy-dog2 {
+      right: -15px;
+      bottom: 25%;
+      font-size: 75px;
+      transform: rotate(8deg);
+      opacity: 0.13;
+    }
+
+    .burgundy-dog3 {
+      left: 4%;
+      top: 12%;
+      font-size: 55px;
+      transform: rotate(-12deg);
+      opacity: 0.10;
+    }
+
+    .burgundy-dog4 {
+      right: 5%;
+      top: 10%;
+      font-size: 60px;
+      transform: rotate(10deg);
+      opacity: 0.11;
+    }
+
+    /* =========================================
+       BURGUNDY PAWS
+       ========================================= */
+
     .burgundy-paw {
       position: absolute;
-      font-size: 22px;
-      opacity: 0.18;
-      color: #f5d7dc;
+      font-size: 32px;
+      opacity: 0.22;
       pointer-events: none;
-      animation: pawFloat 6s ease-in-out infinite;
+
+      animation:
+        pawFloat 6s ease-in-out infinite;
+
       z-index: 1;
     }
 
@@ -202,25 +234,38 @@
       animation-delay: 3s;
     }
 
+    .paw5 {
+      right: 5%;
+      bottom: 20%;
+      animation-delay: 1.5s;
+    }
+
     @keyframes pawFloat {
       0%, 100% {
         transform: translateY(0) rotate(-8deg);
-        opacity: 0.12;
+        opacity: 0.15;
       }
 
       50% {
         transform: translateY(-8px) rotate(5deg);
-        opacity: 0.27;
+        opacity: 0.30;
       }
     }
+
+    /* =========================================
+       BURGUNDY HEARTS
+       ========================================= */
 
     .burgundy-heart {
       position: absolute;
       color: #ffb3bd;
       opacity: 0.25;
-      font-size: 25px;
+      font-size: 28px;
       pointer-events: none;
-      animation: heartFloat 5s ease-in-out infinite;
+
+      animation:
+        heartFloat 5s ease-in-out infinite;
+
       z-index: 1;
     }
 
@@ -252,7 +297,7 @@
     }
 
     /* =========================================
-       CONTINUE BUTTON
+       CONTINUE
        ========================================= */
 
     .continue {
@@ -260,8 +305,10 @@
       bottom: 45px;
       left: 50%;
       transform: translateX(-50%);
+
       opacity: 0;
       animation: appear 2s ease forwards 11s;
+
       color: #ddd;
       font-size: 14px;
       letter-spacing: 2px;
@@ -294,6 +341,7 @@
       min-height: 100vh;
       padding: 90px 25px;
       text-align: center;
+
       background:
         radial-gradient(
           circle at top,
@@ -301,6 +349,7 @@
           #2b040a 50%,
           transparent 100%
         );
+
       position: relative;
       z-index: 1;
       overflow: hidden;
@@ -329,6 +378,7 @@
       line-height: 1.9;
       font-size: 17px;
       color: #eedddf;
+
       position: relative;
       z-index: 3;
     }
@@ -357,15 +407,20 @@
     .reveal-button {
       margin-top: 25px;
       padding: 13px 28px;
+
       border: 1px solid #c98892;
       border-radius: 30px;
+
       background: transparent;
       color: white;
+
       font-family: Georgia, serif;
       font-size: 14px;
       letter-spacing: 1px;
+
       cursor: pointer;
       transition: 0.3s;
+
       position: relative;
       z-index: 4;
     }
@@ -373,7 +428,9 @@
     .reveal-button:hover {
       background: #c98892;
       color: #1a0205;
-      box-shadow: 0 0 20px rgba(201, 136, 146, 0.35);
+
+      box-shadow:
+        0 0 20px rgba(201, 136, 146, 0.35);
     }
 
     .secret-button {
@@ -384,7 +441,9 @@
     .secret-button:hover {
       background: #8faadb;
       color: #030b17;
-      box-shadow: 0 0 20px rgba(143, 170, 219, 0.35);
+
+      box-shadow:
+        0 0 20px rgba(143, 170, 219, 0.35);
     }
 
     /* =========================================
@@ -394,9 +453,12 @@
     .final-message {
       margin-top: 70px;
       padding: 40px 20px;
+
       border-top: 1px solid #5e101a;
+
       opacity: 0;
       transform: translateY(20px);
+
       position: relative;
       z-index: 3;
     }
@@ -424,10 +486,6 @@
       animation: heartbeat 1.5s infinite;
     }
 
-    /* =========================================
-       HIDDEN UNTIL CONTINUE
-       ========================================= */
-
     #letterSection {
       display: none;
     }
@@ -438,11 +496,15 @@
 
     .secret-page {
       display: none;
+
       min-height: 100vh;
       width: 100%;
+
       padding: 80px 25px;
+
       position: relative;
       z-index: 2;
+
       cursor: pointer;
       text-align: left;
       overflow: hidden;
@@ -459,67 +521,120 @@
     .secret-content {
       max-width: 550px;
       margin: auto;
+
       position: relative;
       z-index: 3;
     }
 
     /* =========================================
-       BLUE PAGE MOON
+       BLUE MOON
        ========================================= */
 
     .blue-moon {
       position: absolute;
+
       top: 55px;
       right: 45px;
+
       width: 55px;
       height: 55px;
+
       border-radius: 50%;
+
       background: #e9f1ff;
+
       box-shadow:
         0 0 20px rgba(220, 235, 255, 0.5),
         0 0 50px rgba(120, 160, 230, 0.2);
+
       opacity: 0.75;
+
       pointer-events: none;
       z-index: 1;
     }
 
     .blue-moon::after {
       content: "";
+
       position: absolute;
+
       top: -5px;
       left: 15px;
+
       width: 55px;
       height: 55px;
+
       border-radius: 50%;
+
       background: #07152b;
     }
 
     /* =========================================
-       BLUE PAGE DOG
+       BLUE PAGE DOGS
        ========================================= */
 
     .blue-dog {
       position: absolute;
-      bottom: 25px;
-      right: 5%;
+
       font-size: 100px;
+
       opacity: 0.22;
-      filter: drop-shadow(0 0 18px rgba(143, 170, 219, 0.35));
+
+      filter:
+        drop-shadow(
+          0 0 18px rgba(143, 170, 219, 0.35)
+        );
+
       pointer-events: none;
       z-index: 1;
     }
 
+    .blue-dog1 {
+      bottom: 20px;
+      right: 4%;
+    }
+
+    .blue-dog2 {
+      left: -10px;
+      bottom: 30%;
+      font-size: 75px;
+      opacity: 0.13;
+      transform: rotate(-8deg);
+    }
+
+    .blue-dog3 {
+      right: 12%;
+      top: 18%;
+      font-size: 55px;
+      opacity: 0.10;
+      transform: rotate(8deg);
+    }
+
+    .blue-dog4 {
+      left: 10%;
+      top: 8%;
+      font-size: 50px;
+      opacity: 0.09;
+    }
+
     /* =========================================
-       BLUE PAW PRINTS
+       BLUE PAWS
        ========================================= */
 
     .blue-paw {
       position: absolute;
+
+      font-size: 34px;
+
       color: #9bbcf5;
-      font-size: 23px;
-      opacity: 0.18;
+
+      opacity: 0.22;
+
       pointer-events: none;
-      animation: bluePawFloat 7s ease-in-out infinite;
+
+      animation:
+        bluePawFloat 7s ease-in-out infinite;
+
       z-index: 1;
     }
 
@@ -540,6 +655,18 @@
       animation-delay: 2s;
     }
 
+    .blue-paw4 {
+      right: 8%;
+      top: 42%;
+      animation-delay: 3s;
+    }
+
+    .blue-paw5 {
+      left: 5%;
+      bottom: 25%;
+      animation-delay: 1.5s;
+    }
+
     @keyframes bluePawFloat {
       0%, 100% {
         transform: translateY(0) rotate(-10deg);
@@ -551,18 +678,27 @@
     }
 
     /* =========================================
-       SECRET MEMORIES
+       SECRET MEMORY POINTS
        ========================================= */
 
     .secret-point {
-      font-size: 18px;
+      font-size: 20px;
       line-height: 1.8;
+
       color: #d0def2;
+
       margin-bottom: 35px;
+
       opacity: 0;
+
       transform: translateY(20px);
-      transition: all 1.2s ease;
-      text-shadow: 0 0 8px rgba(143, 170, 219, 0.12);
+
+      transition:
+        all 1.2s ease;
+
+      text-shadow:
+        0 0 8px rgba(143, 170, 219, 0.12);
+
       padding-left: 5px;
     }
 
@@ -571,23 +707,32 @@
       transform: translateY(0);
     }
 
-    /* Highlight personal memories */
-
-    .secret-point::first-letter {
-      color: #9bbcf5;
-    }
+    /* =========================================
+       FINAL SECRET MESSAGE
+       ========================================= */
 
     .secret-final {
       margin-top: 60px;
-      font-size: 24px;
+
+      font-size: 26px;
+
       font-weight: normal;
+
       color: #fff;
+
       text-align: center;
+
       line-height: 1.6;
+
       letter-spacing: 1px;
+
       opacity: 0;
+
       transform: scale(0.95);
-      transition: all 1.5s ease;
+
+      transition:
+        all 1.5s ease;
+
       text-shadow:
         0 0 15px rgba(255, 255, 255, 0.4),
         0 0 35px rgba(100, 150, 255, 0.2);
@@ -604,20 +749,30 @@
 
     .tap-hint {
       position: fixed;
+
       bottom: 40px;
       left: 50%;
+
       transform: translateX(-50%);
+
       font-size: 14px;
+
       color: #8faadb;
+
       letter-spacing: 2px;
-      animation: bounce 1.5s infinite;
+
+      animation:
+        bounce 1.5s infinite;
+
       pointer-events: none;
+
       z-index: 5;
+
       text-align: center;
     }
 
     /* =========================================
-       MOBILE ADJUSTMENTS
+       MOBILE
        ========================================= */
 
     @media (max-width: 600px) {
@@ -648,24 +803,32 @@
       }
 
       .secret-point {
-        font-size: 17px;
+        font-size: 20px;
         line-height: 1.8;
       }
 
       .secret-final {
-        font-size: 21px;
+        font-size: 22px;
       }
 
-      .burgundy-dog {
+      .burgundy-dog1 {
         font-size: 65px;
         left: -10px;
         bottom: 15px;
       }
 
-      .blue-dog {
+      .burgundy-dog2 {
+        font-size: 55px;
+      }
+
+      .blue-dog1 {
         font-size: 75px;
         right: -5px;
         bottom: 20px;
+      }
+
+      .blue-dog2 {
+        font-size: 55px;
       }
 
       .blue-moon {
@@ -679,288 +842,406 @@
         width: 45px;
         height: 45px;
       }
+
+      .burgundy-paw,
+      .blue-paw {
+        font-size: 30px;
+      }
     }
 
-  </style>
-</head>
-
-<body>
-
-  <!-- =========================================
+  </style></head><body>  <!-- =========================================
        STAR BACKGROUND
-       ========================================= -->
-
-  <div id="star-container"></div>
-
-
-  <!-- =========================================
+       ========================================= -->  <div id="star-container"></div>  <!-- =========================================
        PART ONE
-       ========================================= -->
+       ========================================= -->  <div id="partOne"><!-- =======================================
+     BURGUNDY OPENING
+     ======================================= -->
 
-  <div id="partOne">
+<section class="opening">
 
-    <!-- =======================================
-         OPENING
-         ======================================= -->
+  <!-- DOGS -->
 
-    <section class="opening">
+  <div class="burgundy-dog burgundy-dog1">
+    🐕
+  </div>
 
-      <!-- BURGUNDY DECOR -->
-      <div class="burgundy-dog">🐕</div>
+  <div class="burgundy-dog burgundy-dog2">
+    🐶
+  </div>
 
-      <div class="burgundy-paw paw1">🐾</div>
-      <div class="burgundy-paw paw2">🐾</div>
-      <div class="burgundy-paw paw3">🐾</div>
-      <div class="burgundy-paw paw4">🐾</div>
+  <div class="burgundy-dog burgundy-dog3">
+    🐕
+  </div>
 
-      <div class="burgundy-heart heart1">♡</div>
-      <div class="burgundy-heart heart2">♡</div>
-      <div class="burgundy-heart heart3">♡</div>
-
-
-      <!-- OPENING TEXT -->
-
-      <div class="opening-content">
-
-        <div class="line line1">
-          Hey…
-        </div>
-
-        <div class="line line2">
-          Before you scroll…
-        </div>
-
-        <div class="line line3">
-          To The Most Beautiful Girl In The World...
-        </div>
-
-        <div class="heart">
-          💫
-        </div>
-
-      </div>
+  <div class="burgundy-dog burgundy-dog4">
+    🐶
+  </div>
 
 
-      <!-- CONTINUE -->
+  <!-- PAWS -->
 
-      <div class="continue" onclick="showLetter()">
+  <div class="burgundy-paw paw1">
+    🐾
+  </div>
 
-        CONTINUE
+  <div class="burgundy-paw paw2">
+    🐾
+  </div>
 
-        <span class="arrow">
-          ↓
-        </span>
+  <div class="burgundy-paw paw3">
+    🐾
+  </div>
 
-      </div>
+  <div class="burgundy-paw paw4">
+    🐾
+  </div>
 
-    </section>
-
-
-    <!-- =======================================
-         LETTER
-         ======================================= -->
-
-    <section class="letter-section" id="letterSection">
-
-      <!-- DECORATIVE DETAILS -->
-
-      <div class="burgundy-paw paw1">🐾</div>
-      <div class="burgundy-paw paw3">🐾</div>
-
-      <div class="burgundy-heart heart2">♡</div>
+  <div class="burgundy-paw paw5">
+    🐾
+  </div>
 
 
-      <h1>
-        A little something for you…
-      </h1>
+  <!-- HEARTS -->
 
-      <div class="subtitle">
-        Take your time. There's no need to rush this.
-      </div>
+  <div class="burgundy-heart heart1">
+    ♡
+  </div>
 
+  <div class="burgundy-heart heart2">
+    ♡
+  </div>
 
-      <div class="letter">
-
-        <p id="p1">
-          It's been more than 3 years, since you entered in my life and every year I wait for this day eagerly.
-        </p>
-
-        <p id="p2">
-          You always deserve the princess treatment from me.
-        </p>
-
-        <p id="p3">
-          The conversations, the laughs, the silly things, the difficult days, and even the completely ordinary moments… somehow became special because you were there.
-        </p>
-
-        <p id="p4">
-          And if there's one thing I want you to know, it's that I genuinely appreciate you. More than I probably say. More than I probably show.
-        </p>
-
-        <p id="p5">
-          So today, I don't want to make this complicated. I just want to wish you something simple… happiness, peace, beautiful moments, and plenty of reasons to smile.
-        </p>
-
-        <p id="p6">
-          And whenever life gets a little too fast, I hope you remember to stop for a moment, breathe, and enjoy the little things.
-        </p>
-
-      </div>
+  <div class="burgundy-heart heart3">
+    ♡
+  </div>
 
 
-      <!-- FIRST REVEAL -->
+  <!-- OPENING TEXT -->
 
-      <button
-        class="reveal-button"
-        onclick="revealLetter()"
-      >
-        THERE'S MORE…
-      </button>
+  <div class="opening-content">
 
+    <div class="line line1">
+      Hey…
+    </div>
 
-      <!-- =====================================
-           FINAL BIRTHDAY MESSAGE
-           ===================================== -->
+    <div class="line line2">
+      Before you scroll…
+    </div>
 
-      <div
-        class="final-message"
-        id="finalMessage"
-      >
+    <div class="line line3">
+      To The Most Beautiful Girl In The World...
+    </div>
 
-        <h2>
-          Happy Birthday ❤️
-        </h2>
-
-        <p>
-          Here's to another year of your beautiful existence.
-          May this year be kinder to you, bring you closer to everything
-          you dream about, and give you countless reasons to be happy.
-        </p>
-
-        <div class="final-heart">
-          ❤️
-        </div>
-
-
-        <!-- SECRET PAGE BUTTON -->
-
-        <button
-          class="reveal-button secret-button"
-          onclick="openSecretPage()"
-        >
-          WAIT… THERE'S STILL MORE
-        </button>
-
-      </div>
-
-    </section>
+    <div class="heart">
+      💫
+    </div>
 
   </div>
 
 
-  <!-- =========================================
-       SECRET BLUE PAGE
-       ========================================= -->
+  <!-- CONTINUE -->
 
-  <section
+  <div
+    class="continue"
+    onclick="showLetter()"
+  >
+
+    CONTINUE
+
+    <span class="arrow">
+      ↓
+    </span>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================
+     BURGUNDY LETTER
+     ======================================= -->
+
+<section
+  class="letter-section"
+  id="letterSection"
+>
+
+  <!-- DECOR -->
+
+  <div class="burgundy-paw paw1">
+    🐾
+  </div>
+
+  <div class="burgundy-paw paw3">
+    🐾
+  </div>
+
+  <div class="burgundy-paw paw5">
+    🐾
+  </div>
+
+  <div class="burgundy-heart heart2">
+    ♡
+  </div>
+
+
+  <!-- EXTRA DOGS -->
+
+  <div
+    class="burgundy-dog burgundy-dog2"
+    style="bottom:10%;"
+  >
+    🐶
+  </div>
+
+  <div
+    class="burgundy-dog burgundy-dog3"
+    style="top:20%;"
+  >
+    🐕
+  </div>
+
+
+  <h1>
+    A little something for you…
+  </h1>
+
+
+  <div class="subtitle">
+    Take your time. There's no need to rush this.
+  </div>
+
+
+  <div class="letter">
+
+    <p id="p1">
+      It's been more than 3 years, since you entered in my life and every year I wait for this day eagerly.
+    </p>
+
+    <p id="p2">
+      You always deserve the princess treatment from me.
+    </p>
+
+    <p id="p3">
+      The conversations, the laughs, the silly things, the difficult days, and even the completely ordinary moments… somehow became special because you were there.
+    </p>
+
+    <p id="p4">
+      And if there's one thing I want you to know, it's that I genuinely appreciate you. More than I probably say. More than I probably show.
+    </p>
+
+    <p id="p5">
+      So today, I don't want to make this complicated. I just want to wish you something simple… happiness, peace, beautiful moments, and plenty of reasons to smile.
+    </p>
+
+    <p id="p6">
+      And whenever life gets a little too fast, I hope you remember to stop for a moment, breathe, and enjoy the little things.
+    </p>
+
+  </div>
+
+
+  <!-- MORE BUTTON -->
+
+  <button
+    class="reveal-button"
+    onclick="revealLetter()"
+  >
+    THERE'S MORE…
+  </button>
+
+
+  <!-- =====================================
+       BIRTHDAY MESSAGE
+       ===================================== -->
+
+  <div
+    class="final-message"
+    id="finalMessage"
+  >
+
+    <h2>
+      Happy Birthday ❤️
+    </h2>
+
+    <p>
+      Here's to another year of your beautiful existence.
+      May this year be kinder to you, bring you closer to everything
+      you dream about, and give you countless reasons to be happy.
+    </p>
+
+    <div class="final-heart">
+      ❤️
+    </div>
+
+
+    <button
+      class="reveal-button secret-button"
+      onclick="openSecretPage()"
+    >
+      WAIT… THERE'S STILL MORE
+    </button>
+
+  </div>
+
+</section>
+
+  </div>  <!-- =========================================
+       SECRET BLUE PAGE
+       ========================================= -->  <section
     class="secret-page"
     id="secretPage"
     onclick="revealNextPoint()"
+  ><!-- =======================================
+     MOON
+     ======================================= -->
+
+<div class="blue-moon"></div>
+
+
+<!-- =======================================
+     BLUE DOGS
+     ======================================= -->
+
+<div class="blue-dog blue-dog1">
+  🐕
+</div>
+
+<div class="blue-dog blue-dog2">
+  🐶
+</div>
+
+<div class="blue-dog blue-dog3">
+  🐕
+</div>
+
+<div class="blue-dog blue-dog4">
+  🐶
+</div>
+
+
+<!-- =======================================
+     BLUE PAWS
+     ======================================= -->
+
+<div class="blue-paw blue-paw1">
+  🐾
+</div>
+
+<div class="blue-paw blue-paw2">
+  🐾
+</div>
+
+<div class="blue-paw blue-paw3">
+  🐾
+</div>
+
+<div class="blue-paw blue-paw4">
+  🐾
+</div>
+
+<div class="blue-paw blue-paw5">
+  🐾
+</div>
+
+
+<!-- =======================================
+     SECRET MEMORIES
+     ======================================= -->
+
+<div class="secret-content">
+
+  <p
+    class="secret-point"
+    id="point1"
   >
-
-    <!-- BLUE DECOR -->
-
-    <div class="blue-moon"></div>
-
-    <div class="blue-paw blue-paw1">
-      🐾
-    </div>
-
-    <div class="blue-paw blue-paw2">
-      🐾
-    </div>
-
-    <div class="blue-paw blue-paw3">
-      🐾
-    </div>
-
-    <div class="blue-dog">
-      🐕
-    </div>
+    1. I still remember the face you made while drinking water
+  </p>
 
 
-    <!-- SECRET CONTENT -->
-
-    <div class="secret-content">
-
-      <p
-        class="secret-point"
-        id="point1"
-      >
-        1. I still remember the face you made while drinking water
-      </p>
+  <p
+    class="secret-point"
+    id="point2"
+  >
+    2. I still remember the shocking moment after Naina discovered something
+  </p>
 
 
-      <p
-        class="secret-point"
-        id="point2"
-      >
-        2. I still remember the shocking moment after Naina discovered something
-      </p>
+  <p
+    class="secret-point"
+    id="point3"
+  >
+    3. I still remember the first food from you — "Dal Khichdi"
+  </p>
 
 
-      <p
-        class="secret-point"
-        id="point3"
-      >
-        3. I still remember the first food from you — "Dal Khichdi"
-      </p>
+  <p
+    class="secret-point"
+    id="point4"
+  >
+    4. I'll always love you the way I did, and I'm doing
+  </p>
 
 
-      <p
-        class="secret-point"
-        id="point4"
-      >
-        4. I'll always love you the way I did, and I'm doing
-      </p>
+  <p
+    class="secret-point"
+    id="point5"
+  >
+    5. I remember those sleepless nights in Shell
+  </p>
 
 
-      <h2
-        class="secret-final"
-        id="point5"
-      >
-        YOU DESERVE ALL THE HAPPINESS
-        <br>
-        AND EVERYTHING YOU DESIRE
-        ❤️
-      </h2>
-
-    </div>
+  <p
+    class="secret-point"
+    id="point6"
+  >
+    6. I remember the day Siddy came in our life, which is today
+  </p>
 
 
-    <!-- TAP HINT -->
-
-    <div
-      class="tap-hint"
-      id="tapHint"
-    >
-
-      TAP ANYWHERE
-
-      <span class="arrow">
-        ↓
-      </span>
-
-    </div>
-
-  </section>
+  <p
+    class="secret-point"
+    id="point7"
+  >
+    7. I do remember our first kiss too, it was imperfect but magical ✨️
+  </p>
 
 
-  <!-- =========================================
+  <!-- FINAL -->
+
+  <h2
+    class="secret-final"
+    id="point8"
+  >
+    YOU DESERVE ALL THE HAPPINESS
+    <br>
+    AND EVERYTHING YOU DESIRE
+    ❤️
+  </h2>
+
+</div>
+
+
+<!-- =======================================
+     TAP HINT
+     ======================================= -->
+
+<div
+  class="tap-hint"
+  id="tapHint"
+>
+
+  TAP ANYWHERE
+
+  <span class="arrow">
+    ↓
+  </span>
+
+</div>
+
+  </section>  <!-- =========================================
        JAVASCRIPT
-       ========================================= -->
-
-  <script>
+       ========================================= -->  <script>
 
     /* =========================================
        STAR GENERATION
@@ -1028,6 +1309,7 @@
           behavior: "smooth"
         });
 
+
         setTimeout(() => {
 
           document
@@ -1063,7 +1345,7 @@
 
 
     /* =========================================
-       REVEAL MORE LETTER
+       REVEAL LETTER
        ========================================= */
 
     function revealLetter() {
@@ -1126,29 +1408,21 @@
 
     function openSecretPage() {
 
-      /* Hide first page */
-
       document
         .getElementById("partOne")
         .style
         .display = "none";
 
 
-      /* Change to navy blue */
-
       document.body.style.background =
         "radial-gradient(circle at center, #0a1f3d 0%, #030b17 60%, #000 100%)";
 
-
-      /* Show secret page */
 
       const secretPage =
         document.getElementById("secretPage");
 
       secretPage.style.display = "block";
 
-
-      /* Start from top */
 
       window.scrollTo({
         top: 0,
@@ -1159,12 +1433,12 @@
 
 
     /* =========================================
-       REVEAL SECRET MEMORIES ONE BY ONE
+       REVEAL 7 MEMORIES + FINAL
        ========================================= */
 
     function revealNextPoint() {
 
-      if (currentPoint <= 4) {
+      if (currentPoint <= 7) {
 
         document
           .getElementById(`point${currentPoint}`)
@@ -1175,10 +1449,10 @@
 
       }
 
-      else if (currentPoint === 5) {
+      else if (currentPoint === 8) {
 
         document
-          .getElementById("point5")
+          .getElementById("point8")
           .classList
           .add("show");
 
@@ -1195,7 +1469,5 @@
 
     }
 
-  </script>
-
-</body>
+  </script></body>
 </html>
