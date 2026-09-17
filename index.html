@@ -1,1473 +1,937 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>To The Most Beautiful Girl In The World ❤️</title>  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    html {
-      scroll-behavior: smooth;
-    }
+<title>To The Most Beautiful Girl In The World ❤️</title>
 
-    body {
-      background: #1a0205;
-      color: white;
-      font-family: Georgia, "Times New Roman", serif;
-      overflow-x: hidden;
-      transition: background 1.5s ease;
-    }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    /* =========================================
-       SPARKLING STARS
-       ========================================= */
+html {
+    scroll-behavior: smooth;
+}
 
-    #star-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 0;
-      pointer-events: none;
-    }
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    overflow-x: hidden;
+    background: #000;
+    color: white;
+}
 
-    .star {
-      position: absolute;
-      background: white;
-      border-radius: 50%;
-      opacity: 0;
-      animation: twinkle linear infinite;
-    }
+/* =====================================================
+   COMMON
+===================================================== */
 
-    @keyframes twinkle {
-      0% {
-        opacity: 0;
-        transform: scale(0.5);
-      }
+.slide {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 22px;
+}
 
-      50% {
-        opacity: 0.8;
-        transform: scale(1.2);
-        box-shadow: 0 0 5px white;
-      }
+.content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 850px;
+}
 
-      100% {
-        opacity: 0;
-        transform: scale(0.5);
-      }
-    }
+button {
+    font-family: Georgia, "Times New Roman", serif;
+    cursor: pointer;
+}
 
-    /* =========================================
-       OPENING SCREEN
-       ========================================= */
+.fade {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.4s ease, transform 1.4s ease;
+}
 
-    .opening {
-      height: 100vh;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 30px;
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-      background:
-        radial-gradient(
-          circle at center,
-          #5e101a 0%,
-          #3a0810 45%,
-          transparent 100%
+
+/* =====================================================
+   SLIDE 1 — BURGUNDY / RED SUNSET
+===================================================== */
+
+#slide1 {
+    background:
+        linear-gradient(
+            to bottom,
+            #26030b 0%,
+            #5b0b1a 35%,
+            #a32935 65%,
+            #d65a43 82%,
+            #ef9360 100%
         );
+}
 
-      position: relative;
-      z-index: 1;
-      overflow: hidden;
-    }
+/* Sunset glow */
 
-    .opening-content {
-      max-width: 500px;
-      position: relative;
-      z-index: 3;
-    }
+.sun {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: #ffd59a;
+    box-shadow:
+        0 0 35px #ffb56b,
+        0 0 90px rgba(255, 154, 92, 0.8),
+        0 0 160px rgba(255, 119, 82, 0.5);
+    bottom: 16%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.9;
+}
 
-    .line {
-      opacity: 0;
-      transform: translateY(15px);
-      animation: appear 2s ease forwards;
-    }
+/* Horizon */
 
-    .line1 {
-      font-size: 22px;
-      animation-delay: 1s;
-    }
+.horizon {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 24%;
+    background:
+        linear-gradient(
+            to top,
+            #17030a,
+            rgba(39, 4, 12, 0.85) 50%,
+            transparent
+        );
+}
 
-    .line2 {
-      font-size: 18px;
-      color: #cfcfcf;
-      margin-top: 28px;
-      animation-delay: 4s;
-    }
+/* Distant hills */
 
-    .line3 {
-      font-size: 26px;
-      margin-top: 35px;
-      font-style: italic;
-      color: #f5d7dc;
-      animation-delay: 7s;
-    }
+.hills {
+    position: absolute;
+    bottom: 12%;
+    left: -5%;
+    width: 110%;
+    height: 150px;
+    background: #2b0710;
+    clip-path: polygon(
+        0 100%,
+        0 65%,
+        8% 52%,
+        17% 67%,
+        27% 35%,
+        36% 61%,
+        47% 25%,
+        58% 62%,
+        70% 40%,
+        80% 65%,
+        91% 45%,
+        100% 65%,
+        100% 100%
+    );
+    opacity: 0.8;
+}
 
-    .heart {
-      font-size: 25px;
-      margin-top: 18px;
-      opacity: 0;
+/* Intro text */
 
-      animation:
-        appear 2s ease forwards 9s,
-        heartbeat 1.5s ease-in-out infinite 11s;
-    }
+.line {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: introText 1.5s forwards;
+}
 
-    @keyframes appear {
-      from {
-        opacity: 0;
-        transform: translateY(15px);
-      }
+.line1 {
+    font-size: clamp(28px, 7vw, 48px);
+    margin-bottom: 25px;
+    animation-delay: 0.5s;
+}
 
-      to {
+.line2 {
+    font-size: clamp(21px, 5vw, 32px);
+    margin-bottom: 30px;
+    animation-delay: 1.7s;
+}
+
+.line3 {
+    font-size: clamp(25px, 6vw, 42px);
+    line-height: 1.3;
+    animation-delay: 3s;
+}
+
+@keyframes introText {
+    to {
         opacity: 1;
         transform: translateY(0);
-      }
+    }
+}
+
+.heart {
+    font-size: 38px;
+    margin: 30px 0;
+    opacity: 0;
+    animation: heartAppear 1.5s forwards 4.3s;
+}
+
+@keyframes heartAppear {
+    to {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+.continue {
+    margin-top: 35px;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+    font-size: 16px;
+    letter-spacing: 4px;
+    text-decoration: none;
+    opacity: 0;
+    animation: heartAppear 1.5s forwards 5.2s;
+}
+
+.arrow {
+    font-size: 28px;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
     }
 
-    @keyframes heartbeat {
-      0%, 100% {
-        transform: scale(1);
-      }
+    50% {
+        transform: translateY(8px);
+    }
+}
 
-      50% {
-        transform: scale(1.25);
-      }
+
+/* =====================================================
+   SLIDE 1 — LETTER
+===================================================== */
+
+#letter {
+    min-height: 100vh;
+    background:
+        linear-gradient(
+            to bottom,
+            #5b0b1a,
+            #7e1725 40%,
+            #9f2a32 100%
+        );
+}
+
+#letter h1 {
+    font-size: clamp(30px, 7vw, 52px);
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: clamp(16px, 4vw, 21px);
+    line-height: 1.7;
+    opacity: 0.85;
+    margin-bottom: 45px;
+}
+
+.letter-text {
+    font-size: clamp(17px, 4.2vw, 22px);
+    line-height: 1.9;
+}
+
+.letter-text p {
+    margin: 0 auto 35px;
+    max-width: 760px;
+}
+
+.reveal-button {
+    border: 1px solid rgba(255,255,255,0.55);
+    background: rgba(255,255,255,0.08);
+    color: white;
+    padding: 15px 27px;
+    border-radius: 40px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    backdrop-filter: blur(8px);
+    transition: all 0.4s ease;
+    margin-top: 20px;
+}
+
+.reveal-button:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   SLIDE 2 — MIDNIGHT
+===================================================== */
+
+#slide2 {
+    background:
+        linear-gradient(
+            to bottom,
+            #020817 0%,
+            #061329 45%,
+            #0b1d3b 100%
+        );
+}
+
+/* Moon */
+
+.moon {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #fff5d6;
+    top: 8%;
+    right: 10%;
+    box-shadow:
+        0 0 30px rgba(255,245,214,0.75),
+        0 0 90px rgba(255,245,214,0.25);
+}
+
+.moon::after {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #061329;
+    left: 35px;
+    top: -15px;
+}
+
+/* Stars */
+
+.stars {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 0 7px rgba(255,255,255,0.8);
+    animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.25;
+        transform: scale(0.8);
     }
 
-    /* =========================================
-       BURGUNDY DOGS
-       ========================================= */
-
-    .burgundy-dog {
-      position: absolute;
-      font-size: 95px;
-      opacity: 0.20;
-      filter:
-        drop-shadow(0 0 15px rgba(255, 170, 180, 0.25));
-      pointer-events: none;
-      z-index: 1;
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
     }
+}
 
-    .burgundy-dog1 {
-      left: -12px;
-      bottom: 15px;
-      transform: rotate(-5deg);
-    }
 
-    .burgundy-dog2 {
-      right: -15px;
-      bottom: 25%;
-      font-size: 75px;
-      transform: rotate(8deg);
-      opacity: 0.13;
-    }
+/* =====================================================
+   MEMORIES
+===================================================== */
 
-    .burgundy-dog3 {
-      left: 4%;
-      top: 12%;
-      font-size: 55px;
-      transform: rotate(-12deg);
-      opacity: 0.10;
-    }
+.memories {
+    width: 100%;
+    max-width: 850px;
+    position: relative;
+    z-index: 5;
+}
 
-    .burgundy-dog4 {
-      right: 5%;
-      top: 10%;
-      font-size: 60px;
-      transform: rotate(10deg);
-      opacity: 0.11;
-    }
+.memories h2 {
+    font-size: clamp(28px, 7vw, 45px);
+    margin-bottom: 35px;
+}
 
-    /* =========================================
-       BURGUNDY PAWS
-       ========================================= */
+.memory {
+    padding: 20px 5px;
+    font-size: clamp(17px, 4.5vw, 23px);
+    line-height: 1.7;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+}
 
-    .burgundy-paw {
-      position: absolute;
-      font-size: 32px;
-      opacity: 0.22;
-      pointer-events: none;
 
-      animation:
-        pawFloat 6s ease-in-out infinite;
+/* =====================================================
+   SLIDE 3 — FOREST GREEN
+===================================================== */
 
-      z-index: 1;
-    }
+#slide3 {
+    background:
+        linear-gradient(
+            to bottom,
+            #031c12 0%,
+            #06452a 42%,
+            #0a6039 75%,
+            #062719 100%
+        );
+}
 
-    .paw1 {
-      right: 8%;
-      top: 22%;
-      animation-delay: 0s;
-    }
+/* Forest atmospheric glow */
 
-    .paw2 {
-      right: 15%;
-      top: 28%;
-      animation-delay: 1s;
-    }
+.forest-glow {
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: rgba(117, 255, 174, 0.12);
+    filter: blur(50px);
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
-    .paw3 {
-      left: 7%;
-      top: 55%;
-      animation-delay: 2s;
-    }
+/* Trees */
 
-    .paw4 {
-      left: 13%;
-      top: 61%;
-      animation-delay: 3s;
-    }
+.tree {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 80px solid transparent;
+    border-right: 80px solid transparent;
+    border-bottom: 210px solid #02150d;
+    opacity: 0.9;
+}
 
-    .paw5 {
-      right: 5%;
-      bottom: 20%;
-      animation-delay: 1.5s;
-    }
+.tree::after {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 55px;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 130px solid #02150d;
+}
 
-    @keyframes pawFloat {
-      0%, 100% {
-        transform: translateY(0) rotate(-8deg);
+.tree1 {
+    left: -25px;
+    transform: scale(1.1);
+}
+
+.tree2 {
+    left: 15%;
+    transform: scale(0.75);
+}
+
+.tree3 {
+    right: 5%;
+    transform: scale(1.25);
+}
+
+.tree4 {
+    right: 22%;
+    transform: scale(0.7);
+}
+
+/* Forest ground */
+
+.forest-ground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 18%;
+    background: linear-gradient(
+        to top,
+        #010b07,
+        transparent
+    );
+}
+
+/* Fireflies */
+
+.firefly {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #d8ffd7;
+    border-radius: 50%;
+    box-shadow: 0 0 12px #b8ffb5;
+    animation: floatFirefly 5s infinite ease-in-out;
+}
+
+@keyframes floatFirefly {
+    0%, 100% {
         opacity: 0.15;
-      }
-
-      50% {
-        transform: translateY(-8px) rotate(5deg);
-        opacity: 0.30;
-      }
+        transform: translate(0, 0);
     }
 
-    /* =========================================
-       BURGUNDY HEARTS
-       ========================================= */
-
-    .burgundy-heart {
-      position: absolute;
-      color: #ffb3bd;
-      opacity: 0.25;
-      font-size: 28px;
-      pointer-events: none;
-
-      animation:
-        heartFloat 5s ease-in-out infinite;
-
-      z-index: 1;
-    }
-
-    .heart1 {
-      right: 10%;
-      top: 45%;
-    }
-
-    .heart2 {
-      left: 8%;
-      top: 35%;
-      animation-delay: 2s;
-    }
-
-    .heart3 {
-      right: 18%;
-      bottom: 15%;
-      animation-delay: 1s;
-    }
-
-    @keyframes heartFloat {
-      0%, 100% {
-        transform: translateY(0) scale(1);
-      }
-
-      50% {
-        transform: translateY(-10px) scale(1.15);
-      }
-    }
-
-    /* =========================================
-       CONTINUE
-       ========================================= */
-
-    .continue {
-      position: absolute;
-      bottom: 45px;
-      left: 50%;
-      transform: translateX(-50%);
-
-      opacity: 0;
-      animation: appear 2s ease forwards 11s;
-
-      color: #ddd;
-      font-size: 14px;
-      letter-spacing: 2px;
-      cursor: pointer;
-      z-index: 4;
-    }
-
-    .arrow {
-      display: block;
-      font-size: 20px;
-      margin-top: 8px;
-      animation: bounce 1.5s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(7px);
-      }
-    }
-
-    /* =========================================
-       LETTER SECTION
-       ========================================= */
-
-    .letter-section {
-      min-height: 100vh;
-      padding: 90px 25px;
-      text-align: center;
-
-      background:
-        radial-gradient(
-          circle at top,
-          #4a0d15 0%,
-          #2b040a 50%,
-          transparent 100%
-        );
-
-      position: relative;
-      z-index: 1;
-      overflow: hidden;
-    }
-
-    .letter-section h1 {
-      font-size: 28px;
-      font-weight: normal;
-      margin-bottom: 12px;
-      position: relative;
-      z-index: 3;
-    }
-
-    .subtitle {
-      color: #d1b8bc;
-      font-size: 15px;
-      margin-bottom: 50px;
-      position: relative;
-      z-index: 3;
-    }
-
-    .letter {
-      max-width: 550px;
-      margin: auto;
-      text-align: left;
-      line-height: 1.9;
-      font-size: 17px;
-      color: #eedddf;
-
-      position: relative;
-      z-index: 3;
-    }
-
-    .letter p {
-      margin-bottom: 28px;
-      opacity: 0;
-      transform: translateY(20px);
-    }
-
-    .letter p.show {
-      animation: letterAppear 1.2s ease forwards;
-    }
-
-    @keyframes letterAppear {
-      to {
+    50% {
         opacity: 1;
-        transform: translateY(0);
-      }
+        transform: translate(20px, -30px);
+    }
+}
+
+
+/* =====================================================
+   FINAL MESSAGE
+===================================================== */
+
+.final-content {
+    position: relative;
+    z-index: 20;
+    max-width: 850px;
+}
+
+.final-title {
+    font-size: clamp(25px, 6vw, 43px);
+    line-height: 1.35;
+    margin-bottom: 45px;
+}
+
+.final-message {
+    font-size: clamp(17px, 4.4vw, 22px);
+    line-height: 1.85;
+}
+
+.final-message p {
+    margin-bottom: 38px;
+}
+
+.final-love {
+    font-size: clamp(27px, 7vw, 48px);
+    margin-top: 45px;
+    line-height: 1.4;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .slide {
+        padding: 35px 20px;
     }
 
-    /* =========================================
-       BUTTONS
-       ========================================= */
-
-    .reveal-button {
-      margin-top: 25px;
-      padding: 13px 28px;
-
-      border: 1px solid #c98892;
-      border-radius: 30px;
-
-      background: transparent;
-      color: white;
-
-      font-family: Georgia, serif;
-      font-size: 14px;
-      letter-spacing: 1px;
-
-      cursor: pointer;
-      transition: 0.3s;
-
-      position: relative;
-      z-index: 4;
+    .sun {
+        width: 120px;
+        height: 120px;
+        bottom: 18%;
     }
 
-    .reveal-button:hover {
-      background: #c98892;
-      color: #1a0205;
-
-      box-shadow:
-        0 0 20px rgba(201, 136, 146, 0.35);
+    .moon {
+        width: 100px;
+        height: 100px;
+        top: 7%;
+        right: 7%;
     }
 
-    .secret-button {
-      margin-top: 40px;
-      border-color: #8faadb;
+    .moon::after {
+        width: 100px;
+        height: 100px;
+        left: 25px;
+        top: -10px;
     }
 
-    .secret-button:hover {
-      background: #8faadb;
-      color: #030b17;
-
-      box-shadow:
-        0 0 20px rgba(143, 170, 219, 0.35);
+    .tree {
+        border-left-width: 55px;
+        border-right-width: 55px;
+        border-bottom-width: 160px;
     }
 
-    /* =========================================
-       FINAL MESSAGE
-       ========================================= */
-
-    .final-message {
-      margin-top: 70px;
-      padding: 40px 20px;
-
-      border-top: 1px solid #5e101a;
-
-      opacity: 0;
-      transform: translateY(20px);
-
-      position: relative;
-      z-index: 3;
+    .tree::after {
+        left: -35px;
+        top: 45px;
+        border-left-width: 35px;
+        border-right-width: 35px;
+        border-bottom-width: 100px;
     }
 
-    .final-message.show {
-      animation: letterAppear 1.5s ease forwards;
+    .memory {
+        padding: 17px 2px;
     }
+}
+</style>
+</head>
 
-    .final-message h2 {
-      font-size: 25px;
-      font-weight: normal;
-      color: #f5d7dc;
-      margin-bottom: 20px;
-    }
 
-    .final-message p {
-      color: #eedddf;
-      line-height: 1.8;
-      font-size: 16px;
-    }
+<body>
 
-    .final-heart {
-      font-size: 30px;
-      margin-top: 25px;
-      animation: heartbeat 1.5s infinite;
-    }
 
-    #letterSection {
-      display: none;
-    }
+<!-- =====================================================
+     SLIDE 1 — SUNSET
+===================================================== -->
 
-    /* =========================================
-       SECRET BLUE PAGE
-       ========================================= */
+<section id="slide1" class="slide">
 
-    .secret-page {
-      display: none;
+    <div class="sun"></div>
+    <div class="hills"></div>
+    <div class="horizon"></div>
 
-      min-height: 100vh;
-      width: 100%;
+    <div class="content">
 
-      padding: 80px 25px;
+        <div class="line line1">
+            Hey…
+        </div>
 
-      position: relative;
-      z-index: 2;
+        <div class="line line2">
+            Before you scroll…
+        </div>
 
-      cursor: pointer;
-      text-align: left;
-      overflow: hidden;
+        <div class="line line3">
+            To The Most Beautiful Girl In The World...
+        </div>
 
-      background:
-        radial-gradient(
-          circle at center,
-          rgba(10, 31, 61, 0.85) 0%,
-          rgba(3, 11, 23, 0.95) 60%,
-          #000 100%
-        );
-    }
+        <div class="heart">
+            💫
+        </div>
 
-    .secret-content {
-      max-width: 550px;
-      margin: auto;
+        <a href="#letter" class="continue">
+            CONTINUE
+            <span class="arrow">↓</span>
+        </a>
 
-      position: relative;
-      z-index: 3;
-    }
-
-    /* =========================================
-       BLUE MOON
-       ========================================= */
-
-    .blue-moon {
-      position: absolute;
-
-      top: 55px;
-      right: 45px;
-
-      width: 55px;
-      height: 55px;
-
-      border-radius: 50%;
-
-      background: #e9f1ff;
-
-      box-shadow:
-        0 0 20px rgba(220, 235, 255, 0.5),
-        0 0 50px rgba(120, 160, 230, 0.2);
-
-      opacity: 0.75;
-
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .blue-moon::after {
-      content: "";
-
-      position: absolute;
-
-      top: -5px;
-      left: 15px;
-
-      width: 55px;
-      height: 55px;
-
-      border-radius: 50%;
-
-      background: #07152b;
-    }
-
-    /* =========================================
-       BLUE PAGE DOGS
-       ========================================= */
-
-    .blue-dog {
-      position: absolute;
-
-      font-size: 100px;
-
-      opacity: 0.22;
-
-      filter:
-        drop-shadow(
-          0 0 18px rgba(143, 170, 219, 0.35)
-        );
-
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .blue-dog1 {
-      bottom: 20px;
-      right: 4%;
-    }
-
-    .blue-dog2 {
-      left: -10px;
-      bottom: 30%;
-      font-size: 75px;
-      opacity: 0.13;
-      transform: rotate(-8deg);
-    }
-
-    .blue-dog3 {
-      right: 12%;
-      top: 18%;
-      font-size: 55px;
-      opacity: 0.10;
-      transform: rotate(8deg);
-    }
-
-    .blue-dog4 {
-      left: 10%;
-      top: 8%;
-      font-size: 50px;
-      opacity: 0.09;
-    }
-
-    /* =========================================
-       BLUE PAWS
-       ========================================= */
-
-    .blue-paw {
-      position: absolute;
-
-      font-size: 34px;
-
-      color: #9bbcf5;
-
-      opacity: 0.22;
-
-      pointer-events: none;
-
-      animation:
-        bluePawFloat 7s ease-in-out infinite;
-
-      z-index: 1;
-    }
-
-    .blue-paw1 {
-      left: 7%;
-      top: 25%;
-    }
-
-    .blue-paw2 {
-      left: 13%;
-      top: 32%;
-      animation-delay: 1s;
-    }
-
-    .blue-paw3 {
-      right: 10%;
-      top: 15%;
-      animation-delay: 2s;
-    }
-
-    .blue-paw4 {
-      right: 8%;
-      top: 42%;
-      animation-delay: 3s;
-    }
-
-    .blue-paw5 {
-      left: 5%;
-      bottom: 25%;
-      animation-delay: 1.5s;
-    }
-
-    @keyframes bluePawFloat {
-      0%, 100% {
-        transform: translateY(0) rotate(-10deg);
-      }
-
-      50% {
-        transform: translateY(-12px) rotate(8deg);
-      }
-    }
-
-    /* =========================================
-       SECRET MEMORY POINTS
-       ========================================= */
-
-    .secret-point {
-      font-size: 20px;
-      line-height: 1.8;
-
-      color: #d0def2;
-
-      margin-bottom: 35px;
-
-      opacity: 0;
-
-      transform: translateY(20px);
-
-      transition:
-        all 1.2s ease;
-
-      text-shadow:
-        0 0 8px rgba(143, 170, 219, 0.12);
-
-      padding-left: 5px;
-    }
-
-    .secret-point.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* =========================================
-       FINAL SECRET MESSAGE
-       ========================================= */
-
-    .secret-final {
-      margin-top: 60px;
-
-      font-size: 26px;
-
-      font-weight: normal;
-
-      color: #fff;
-
-      text-align: center;
-
-      line-height: 1.6;
-
-      letter-spacing: 1px;
-
-      opacity: 0;
-
-      transform: scale(0.95);
-
-      transition:
-        all 1.5s ease;
-
-      text-shadow:
-        0 0 15px rgba(255, 255, 255, 0.4),
-        0 0 35px rgba(100, 150, 255, 0.2);
-    }
-
-    .secret-final.show {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    /* =========================================
-       TAP HINT
-       ========================================= */
-
-    .tap-hint {
-      position: fixed;
-
-      bottom: 40px;
-      left: 50%;
-
-      transform: translateX(-50%);
-
-      font-size: 14px;
-
-      color: #8faadb;
-
-      letter-spacing: 2px;
-
-      animation:
-        bounce 1.5s infinite;
-
-      pointer-events: none;
-
-      z-index: 5;
-
-      text-align: center;
-    }
-
-    /* =========================================
-       MOBILE
-       ========================================= */
-
-    @media (max-width: 600px) {
-
-      .line1 {
-        font-size: 21px;
-      }
-
-      .line2 {
-        font-size: 17px;
-      }
-
-      .line3 {
-        font-size: 23px;
-      }
-
-      .letter-section {
-        padding: 75px 22px;
-      }
-
-      .letter {
-        font-size: 16px;
-        line-height: 1.85;
-      }
-
-      .secret-page {
-        padding: 75px 22px;
-      }
-
-      .secret-point {
-        font-size: 20px;
-        line-height: 1.8;
-      }
-
-      .secret-final {
-        font-size: 22px;
-      }
-
-      .burgundy-dog1 {
-        font-size: 65px;
-        left: -10px;
-        bottom: 15px;
-      }
-
-      .burgundy-dog2 {
-        font-size: 55px;
-      }
-
-      .blue-dog1 {
-        font-size: 75px;
-        right: -5px;
-        bottom: 20px;
-      }
-
-      .blue-dog2 {
-        font-size: 55px;
-      }
-
-      .blue-moon {
-        width: 45px;
-        height: 45px;
-        right: 25px;
-        top: 30px;
-      }
-
-      .blue-moon::after {
-        width: 45px;
-        height: 45px;
-      }
-
-      .burgundy-paw,
-      .blue-paw {
-        font-size: 30px;
-      }
-    }
-
-  </style></head><body>  <!-- =========================================
-       STAR BACKGROUND
-       ========================================= -->  <div id="star-container"></div>  <!-- =========================================
-       PART ONE
-       ========================================= -->  <div id="partOne"><!-- =======================================
-     BURGUNDY OPENING
-     ======================================= -->
-
-<section class="opening">
-
-  <!-- DOGS -->
-
-  <div class="burgundy-dog burgundy-dog1">
-    🐕
-  </div>
-
-  <div class="burgundy-dog burgundy-dog2">
-    🐶
-  </div>
-
-  <div class="burgundy-dog burgundy-dog3">
-    🐕
-  </div>
-
-  <div class="burgundy-dog burgundy-dog4">
-    🐶
-  </div>
-
-
-  <!-- PAWS -->
-
-  <div class="burgundy-paw paw1">
-    🐾
-  </div>
-
-  <div class="burgundy-paw paw2">
-    🐾
-  </div>
-
-  <div class="burgundy-paw paw3">
-    🐾
-  </div>
-
-  <div class="burgundy-paw paw4">
-    🐾
-  </div>
-
-  <div class="burgundy-paw paw5">
-    🐾
-  </div>
-
-
-  <!-- HEARTS -->
-
-  <div class="burgundy-heart heart1">
-    ♡
-  </div>
-
-  <div class="burgundy-heart heart2">
-    ♡
-  </div>
-
-  <div class="burgundy-heart heart3">
-    ♡
-  </div>
-
-
-  <!-- OPENING TEXT -->
-
-  <div class="opening-content">
-
-    <div class="line line1">
-      Hey…
     </div>
-
-    <div class="line line2">
-      Before you scroll…
-    </div>
-
-    <div class="line line3">
-      To The Most Beautiful Girl In The World...
-    </div>
-
-    <div class="heart">
-      💫
-    </div>
-
-  </div>
-
-
-  <!-- CONTINUE -->
-
-  <div
-    class="continue"
-    onclick="showLetter()"
-  >
-
-    CONTINUE
-
-    <span class="arrow">
-      ↓
-    </span>
-
-  </div>
 
 </section>
 
 
-<!-- =======================================
-     BURGUNDY LETTER
-     ======================================= -->
 
-<section
-  class="letter-section"
-  id="letterSection"
->
+<!-- =====================================================
+     SLIDE 1 — LETTER
+===================================================== -->
 
-  <!-- DECOR -->
+<section id="letter" class="slide">
 
-  <div class="burgundy-paw paw1">
-    🐾
-  </div>
+    <div class="content">
 
-  <div class="burgundy-paw paw3">
-    🐾
-  </div>
+        <h1 class="fade">
+            A little something for you…
+        </h1>
 
-  <div class="burgundy-paw paw5">
-    🐾
-  </div>
+        <div class="subtitle fade">
+            Take your time.<br>
+            There's no need to rush this.
+        </div>
 
-  <div class="burgundy-heart heart2">
-    ♡
-  </div>
+        <div class="letter-text">
 
+            <p class="fade">
+                It's been more than 3 years, since you entered in my life
+                and every year I wait for this day eagerly.
+            </p>
 
-  <!-- EXTRA DOGS -->
+            <p class="fade">
+                You always deserve the princess treatment from me.
+            </p>
 
-  <div
-    class="burgundy-dog burgundy-dog2"
-    style="bottom:10%;"
-  >
-    🐶
-  </div>
+            <p class="fade">
+                The conversations, the laughs, the silly things,
+                the difficult days, and even the completely ordinary moments…
+                somehow became special because you were there.
+            </p>
 
-  <div
-    class="burgundy-dog burgundy-dog3"
-    style="top:20%;"
-  >
-    🐕
-  </div>
+            <p class="fade">
+                And if there's one thing I want you to know,
+                it's that I genuinely appreciate you.
+                More than I probably say.
+                More than I probably show.
+            </p>
 
+            <p class="fade">
+                So today, I don't want to make this complicated.
+                I just want to wish you something simple…
+                happiness, peace, beautiful moments,
+                and plenty of reasons to smile.
+            </p>
 
-  <h1>
-    A little something for you…
-  </h1>
+            <p class="fade">
+                And whenever life gets a little too fast,
+                I hope you remember to stop for a moment,
+                breathe, and enjoy the little things.
+            </p>
 
+        </div>
 
-  <div class="subtitle">
-    Take your time. There's no need to rush this.
-  </div>
+        <button class="reveal-button" onclick="goToMidnight()">
+            THERE'S MORE…
+        </button>
 
-
-  <div class="letter">
-
-    <p id="p1">
-      It's been more than 3 years, since you entered in my life and every year I wait for this day eagerly.
-    </p>
-
-    <p id="p2">
-      You always deserve the princess treatment from me.
-    </p>
-
-    <p id="p3">
-      The conversations, the laughs, the silly things, the difficult days, and even the completely ordinary moments… somehow became special because you were there.
-    </p>
-
-    <p id="p4">
-      And if there's one thing I want you to know, it's that I genuinely appreciate you. More than I probably say. More than I probably show.
-    </p>
-
-    <p id="p5">
-      So today, I don't want to make this complicated. I just want to wish you something simple… happiness, peace, beautiful moments, and plenty of reasons to smile.
-    </p>
-
-    <p id="p6">
-      And whenever life gets a little too fast, I hope you remember to stop for a moment, breathe, and enjoy the little things.
-    </p>
-
-  </div>
-
-
-  <!-- MORE BUTTON -->
-
-  <button
-    class="reveal-button"
-    onclick="revealLetter()"
-  >
-    THERE'S MORE…
-  </button>
-
-
-  <!-- =====================================
-       BIRTHDAY MESSAGE
-       ===================================== -->
-
-  <div
-    class="final-message"
-    id="finalMessage"
-  >
-
-    <h2>
-      Happy Birthday ❤️
-    </h2>
-
-    <p>
-      Here's to another year of your beautiful existence.
-      May this year be kinder to you, bring you closer to everything
-      you dream about, and give you countless reasons to be happy.
-    </p>
-
-    <div class="final-heart">
-      ❤️
     </div>
-
-
-    <button
-      class="reveal-button secret-button"
-      onclick="openSecretPage()"
-    >
-      WAIT… THERE'S STILL MORE
-    </button>
-
-  </div>
 
 </section>
 
-  </div>  <!-- =========================================
-       SECRET BLUE PAGE
-       ========================================= -->  <section
-    class="secret-page"
-    id="secretPage"
-    onclick="revealNextPoint()"
-  ><!-- =======================================
-     MOON
-     ======================================= -->
 
-<div class="blue-moon"></div>
 
+<!-- =====================================================
+     SLIDE 2 — MIDNIGHT + MEMORIES
+===================================================== -->
 
-<!-- =======================================
-     BLUE DOGS
-     ======================================= -->
+<section id="slide2" class="slide">
 
-<div class="blue-dog blue-dog1">
-  🐕
-</div>
+    <div class="stars">
 
-<div class="blue-dog blue-dog2">
-  🐶
-</div>
+        <span class="star" style="left:8%; top:12%; animation-delay:.4s"></span>
+        <span class="star" style="left:18%; top:25%; animation-delay:1.2s"></span>
+        <span class="star" style="left:28%; top:8%; animation-delay:2s"></span>
+        <span class="star" style="left:39%; top:19%; animation-delay:.8s"></span>
+        <span class="star" style="left:50%; top:10%; animation-delay:1.7s"></span>
+        <span class="star" style="left:61%; top:27%; animation-delay:2.5s"></span>
+        <span class="star" style="left:72%; top:14%; animation-delay:.6s"></span>
+        <span class="star" style="left:83%; top:32%; animation-delay:1.8s"></span>
+        <span class="star" style="left:94%; top:17%; animation-delay:2.8s"></span>
 
-<div class="blue-dog blue-dog3">
-  🐕
-</div>
+        <span class="star" style="left:13%; top:46%; animation-delay:1.5s"></span>
+        <span class="star" style="left:31%; top:39%; animation-delay:2.2s"></span>
+        <span class="star" style="left:48%; top:48%; animation-delay:.3s"></span>
+        <span class="star" style="left:67%; top:43%; animation-delay:1.1s"></span>
+        <span class="star" style="left:87%; top:51%; animation-delay:2.1s"></span>
 
-<div class="blue-dog blue-dog4">
-  🐶
-</div>
+        <span class="star" style="left:5%; top:68%; animation-delay:2.6s"></span>
+        <span class="star" style="left:22%; top:78%; animation-delay:.7s"></span>
+        <span class="star" style="left:45%; top:70%; animation-delay:1.9s"></span>
+        <span class="star" style="left:69%; top:77%; animation-delay:.5s"></span>
+        <span class="star" style="left:92%; top:72%; animation-delay:2.4s"></span>
 
+    </div>
 
-<!-- =======================================
-     BLUE PAWS
-     ======================================= -->
+    <div class="moon"></div>
 
-<div class="blue-paw blue-paw1">
-  🐾
-</div>
+    <div class="memories">
 
-<div class="blue-paw blue-paw2">
-  🐾
-</div>
+        <h2 class="fade">
+            Some things I still remember…
+        </h2>
 
-<div class="blue-paw blue-paw3">
-  🐾
-</div>
+        <div class="memory fade">
+            1. I still remember the face you made while drinking water
+        </div>
 
-<div class="blue-paw blue-paw4">
-  🐾
-</div>
+        <div class="memory fade">
+            2. I still remember the shocking moment after Naina discovered something
+        </div>
 
-<div class="blue-paw blue-paw5">
-  🐾
-</div>
+        <div class="memory fade">
+            3. I still remember the first food from you — "Dal Khichdi"
+        </div>
 
+        <div class="memory fade">
+            4. I'll always love you the way I did, and I'm doing
+        </div>
 
-<!-- =======================================
-     SECRET MEMORIES
-     ======================================= -->
+        <div class="memory fade">
+            5. I remember those sleepless nights in Shell
+        </div>
 
-<div class="secret-content">
+        <div class="memory fade">
+            6. I remember the day Siddy came in our life, which is today
+        </div>
 
-  <p
-    class="secret-point"
-    id="point1"
-  >
-    1. I still remember the face you made while drinking water
-  </p>
+        <div class="memory fade">
+            7. I do remember our first kiss too,
+            it was imperfect but magical ✨️
+        </div>
 
+        <h2 class="fade" style="margin-top:55px;">
+            YOU DESERVE ALL THE HAPPINESS<br>
+            AND EVERYTHING YOU DESIRE ❤️
+        </h2>
 
-  <p
-    class="secret-point"
-    id="point2"
-  >
-    2. I still remember the shocking moment after Naina discovered something
-  </p>
+        <button class="reveal-button" onclick="goToForest()">
+            TAP ANYWHERE ↓
+        </button>
 
+    </div>
 
-  <p
-    class="secret-point"
-    id="point3"
-  >
-    3. I still remember the first food from you — "Dal Khichdi"
-  </p>
+</section>
 
 
-  <p
-    class="secret-point"
-    id="point4"
-  >
-    4. I'll always love you the way I did, and I'm doing
-  </p>
 
+<!-- =====================================================
+     SLIDE 3 — FOREST
+===================================================== -->
 
-  <p
-    class="secret-point"
-    id="point5"
-  >
-    5. I remember those sleepless nights in Shell
-  </p>
+<section id="slide3" class="slide">
 
+    <div class="forest-glow"></div>
 
-  <p
-    class="secret-point"
-    id="point6"
-  >
-    6. I remember the day Siddy came in our life, which is today
-  </p>
+    <!-- Trees -->
 
+    <div class="tree tree1"></div>
+    <div class="tree tree2"></div>
+    <div class="tree tree3"></div>
+    <div class="tree tree4"></div>
 
-  <p
-    class="secret-point"
-    id="point7"
-  >
-    7. I do remember our first kiss too, it was imperfect but magical ✨️
-  </p>
+    <div class="forest-ground"></div>
 
 
-  <!-- FINAL -->
+    <!-- Fireflies -->
 
-  <h2
-    class="secret-final"
-    id="point8"
-  >
-    YOU DESERVE ALL THE HAPPINESS
-    <br>
-    AND EVERYTHING YOU DESIRE
-    ❤️
-  </h2>
+    <span class="firefly"
+          style="left:12%; top:25%; animation-delay:.5s"></span>
 
-</div>
+    <span class="firefly"
+          style="left:25%; top:60%; animation-delay:2s"></span>
 
+    <span class="firefly"
+          style="left:39%; top:35%; animation-delay:1.2s"></span>
 
-<!-- =======================================
-     TAP HINT
-     ======================================= -->
+    <span class="firefly"
+          style="left:54%; top:65%; animation-delay:3s"></span>
 
-<div
-  class="tap-hint"
-  id="tapHint"
->
+    <span class="firefly"
+          style="left:68%; top:30%; animation-delay:1.7s"></span>
 
-  TAP ANYWHERE
+    <span class="firefly"
+          style="left:82%; top:55%; animation-delay:.8s"></span>
 
-  <span class="arrow">
-    ↓
-  </span>
+    <span class="firefly"
+          style="left:92%; top:22%; animation-delay:2.5s"></span>
 
-</div>
 
-  </section>  <!-- =========================================
-       JAVASCRIPT
-       ========================================= -->  <script>
+    <div class="final-content">
 
-    /* =========================================
-       STAR GENERATION
-       ========================================= */
+        <h1 class="final-title fade">
+            YOU DESERVE ALL THE HAPPINESS<br>
+            AND EVERYTHING YOU DESIRE ❤️
+        </h1>
 
-    function createStars() {
 
-      const container =
-        document.getElementById("star-container");
+        <div class="final-message">
 
-      const starCount = 120;
+            <p class="fade">
+                I'll always pray you get what you wish,
+                happiness, success, peace & rest.
+            </p>
 
-      for (let i = 0; i < starCount; i++) {
+            <p class="fade">
+                It's been 1158 days loving you,
+                the best 1k days of my life.
+            </p>
 
-        const star =
-          document.createElement("div");
+            <p class="fade">
+                Tomorrow, wherever you are,
+                never forget me.
+                Never forget the idiot, nonsense,
+                gugu ande, much Mundi
+                who will always love you
+                and think about you.
+            </p>
 
-        star.classList.add("star");
+            <p class="fade">
+                Once again, Happy Birthday my love.
+                Stay strong and blessed.
+            </p>
 
-        star.style.left =
-          `${Math.random() * 100}vw`;
+            <p class="final-love fade">
+                I Love you to the core ❤️✨️
+            </p>
 
-        star.style.top =
-          `${Math.random() * 100}vh`;
+        </div>
 
-        const size =
-          Math.random() * 2 + 1;
+    </div>
 
-        star.style.width =
-          `${size}px`;
+</section>
 
-        star.style.height =
-          `${size}px`;
 
-        star.style.animationDuration =
-          `${Math.random() * 3 + 2}s`;
 
-        star.style.animationDelay =
-          `${Math.random() * 3}s`;
+<script>
 
-        container.appendChild(star);
+/* =====================================================
+   FADE-IN OBSERVER
+===================================================== */
 
-      }
+const observer = new IntersectionObserver(
+    (entries) => {
 
-    }
+        entries.forEach(entry => {
 
+            if (entry.isIntersecting) {
 
-    window.onload = createStars;
+                const elements =
+                    entry.target.querySelectorAll(".fade");
 
+                elements.forEach((element, index) => {
 
-    /* =========================================
-       SHOW LETTER
-       ========================================= */
+                    setTimeout(() => {
+                        element.classList.add("show");
+                    }, index * 350);
 
-    function showLetter() {
+                });
 
-      const letter =
-        document.getElementById("letterSection");
+            }
 
-      letter.style.display = "block";
-
-      setTimeout(() => {
-
-        letter.scrollIntoView({
-          behavior: "smooth"
         });
 
-
-        setTimeout(() => {
-
-          document
-            .getElementById("p1")
-            .classList
-            .add("show");
-
-        }, 700);
-
-
-        setTimeout(() => {
-
-          document
-            .getElementById("p2")
-            .classList
-            .add("show");
-
-        }, 1800);
-
-
-        setTimeout(() => {
-
-          document
-            .getElementById("p3")
-            .classList
-            .add("show");
-
-        }, 2900);
-
-      }, 100);
-
+    },
+    {
+        threshold: 0.15
     }
+);
 
 
-    /* =========================================
-       REVEAL LETTER
-       ========================================= */
+/* Observe all slides */
 
-    function revealLetter() {
-
-      document
-        .getElementById("p4")
-        .classList
-        .add("show");
+document.querySelectorAll(".slide").forEach(slide => {
+    observer.observe(slide);
+});
 
 
-      setTimeout(() => {
+/* =====================================================
+   BUTTON NAVIGATION
+===================================================== */
 
-        document
-          .getElementById("p5")
-          .classList
-          .add("show");
+function goToMidnight() {
 
-      }, 900);
+    document.getElementById("slide2")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
 
-
-      setTimeout(() => {
-
-        document
-          .getElementById("p6")
-          .classList
-          .add("show");
-
-      }, 1800);
+}
 
 
-      setTimeout(() => {
+function goToForest() {
 
-        document
-          .getElementById("finalMessage")
-          .classList
-          .add("show");
+    document.getElementById("slide3")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
 
-
-        setTimeout(() => {
-
-          document
-            .getElementById("finalMessage")
-            .scrollIntoView({
-              behavior: "smooth"
-            });
-
-        }, 500);
-
-      }, 3000);
-
-    }
+}
 
 
-    /* =========================================
-       SECRET PAGE
-       ========================================= */
+/* =====================================================
+   FIRST SLIDE — START ANIMATION
+===================================================== */
 
-    let currentPoint = 1;
+window.addEventListener("load", () => {
 
+    const firstSlide =
+        document.getElementById("slide1");
 
-    function openSecretPage() {
+    const lines =
+        firstSlide.querySelectorAll(".line");
 
-      document
-        .getElementById("partOne")
-        .style
-        .display = "none";
+    lines.forEach(line => {
+        line.style.opacity = "";
+    });
 
+});
 
-      document.body.style.background =
-        "radial-gradient(circle at center, #0a1f3d 0%, #030b17 60%, #000 100%)";
+</script>
 
-
-      const secretPage =
-        document.getElementById("secretPage");
-
-      secretPage.style.display = "block";
-
-
-      window.scrollTo({
-        top: 0,
-        behavior: "instant"
-      });
-
-    }
-
-
-    /* =========================================
-       REVEAL 7 MEMORIES + FINAL
-       ========================================= */
-
-    function revealNextPoint() {
-
-      if (currentPoint <= 7) {
-
-        document
-          .getElementById(`point${currentPoint}`)
-          .classList
-          .add("show");
-
-        currentPoint++;
-
-      }
-
-      else if (currentPoint === 8) {
-
-        document
-          .getElementById("point8")
-          .classList
-          .add("show");
-
-
-        document
-          .getElementById("tapHint")
-          .style
-          .display = "none";
-
-
-        currentPoint++;
-
-      }
-
-    }
-
-  </script></body>
+</body>
 </html>
