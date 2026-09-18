@@ -267,7 +267,7 @@ button {
 .memory { padding: 20px 5px; font-size: clamp(17px, 4.5vw, 23px); line-height: 1.7; border-bottom: 1px solid rgba(255,255,255,0.12); }  
 
 /* =====================================================  
-   POLAROID GALLERY (NEW SECTION)
+   POLAROID GALLERY 
 ===================================================== */
 #gallery {
     background: linear-gradient(to bottom, #0b1d3b 0%, #06152a 50%, #031c12 100%);
@@ -316,6 +316,10 @@ button {
 .polaroid:nth-child(3) { transform: rotate(-3deg); }
 .polaroid:nth-child(4) { transform: rotate(6deg) translateY(10px); }
 .polaroid:nth-child(5) { transform: rotate(-4deg); }
+.polaroid:nth-child(6) { transform: rotate(5deg) translateY(15px); }
+.polaroid:nth-child(7) { transform: rotate(-2deg); }
+.polaroid:nth-child(8) { transform: rotate(4deg) translateY(5px); }
+.polaroid:nth-child(9) { transform: rotate(-6deg) translateY(12px); }
 
 /* Hover effect */
 .polaroid:hover {
@@ -503,6 +507,18 @@ button {
         <div class="polaroid fade">
             <img src="Image5.jpg" alt="Memory 5">
         </div>
+        <div class="polaroid fade">
+            <img src="Image6.jpg" alt="Memory 6">
+        </div>
+        <div class="polaroid fade">
+            <img src="Image7.jpg" alt="Memory 7">
+        </div>
+        <div class="polaroid fade">
+            <img src="Image8.jpg" alt="Memory 8">
+        </div>
+        <div class="polaroid fade">
+            <img src="Image9.jpg" alt="Memory 9">
+        </div>
     </div>
 
     <button class="reveal-button fade" style="margin-top: 40px;" onclick="goToForest()">ONE LAST THING...</button>
@@ -616,4 +632,4 @@ window.addEventListener("load", () => {
 });  
 </script>  
 </body>  
-</html> 
+</html>
